@@ -1,0 +1,15 @@
+1711791324660	geckodriver	INFO	Listening on 127.0.0.1:6042
+1711791327757	mozrunner::runner	INFO	Running command: "C:\\Users\\yanet\\.cache\\selenium\\firefox\\win64\\124.0.1\\firefox.exe" "--marionette" "--remote-debuggin ... 3" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yanet\\AppData\\Local\\Temp\\rust_mozprofileL3lWFp"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1711791328309	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1711791328418	Marionette	INFO	Listening on port 6091
+WebDriver BiDi listening on ws://127.0.0.1:6043
+Read port: 6091
+1711791328631	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:6043/devtools/browser/7f8aec6a-8d67-46b4-b05b-4efaa3a7140f
+JavaScript error: http://localhost:5173/src/shared/components/LanguageToggle.tsx, line 32: TypeError: language is undefined
+JavaScript error: http://localhost:5173/src/shared/components/LanguageToggle.tsx, line 32: TypeError: language is undefined
+1711791333462	Marionette	INFO	Stopped listening on port 6091
+Dynamically enable window occlusion 1

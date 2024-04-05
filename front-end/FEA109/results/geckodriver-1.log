@@ -1,0 +1,17 @@
+1710947820933	geckodriver	INFO	Listening on 127.0.0.1:58981
+1710947823964	mozrunner::runner	INFO	Running command: "C:\\Users\\yanet\\.cache\\selenium\\firefox\\win64\\124.0\\firefox.exe" "--marionette" "--remote-debugging- ... 2" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yanet\\AppData\\Local\\Temp\\rust_mozprofilexcTyvW"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1710947824523	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1710947824633	Marionette	INFO	Listening on port 58991
+WebDriver BiDi listening on ws://127.0.0.1:58982
+Read port: 58991
+1710947824824	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:58982/devtools/browser/fb434c68-732b-4f05-9f6f-7c00ee428b40
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:5173."
+1710947838640	Marionette	INFO	Stopped listening on port 58991
+JavaScript warning: http://localhost:5173/node_modules/.vite/deps/chunk-IWJ72FYJ.js?v=0b2ba9da, line 2215: Script terminated by timeout at:
+frame@http://localhost:5173/node_modules/.vite/deps/chunk-IWJ72FYJ.js?v=0b2ba9da:2215:25
+
+Dynamically enable window occlusion 1
