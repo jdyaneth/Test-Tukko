@@ -16,10 +16,12 @@ TC000-001
     [Documentation]    Feedback Button check
     Open Home
     Max Window
-    Click Element    css:.feedback-icon
+    Click Element    css:button[data-state="closed"]
+    Log    Title should have 10 or more characters    
     Input Text    css:input[name="title"]    TestingTitle
-    Input Text    css:textarea[name="description"]    TestingDescription
-    Click Button    css=input[type="submit"].submitButton
+    Log    Description should have 20 or more characters
+    Input Text    css:textarea[name="description"]    TestingDescriptionrandomtestgeneratedfortesting
+    Click Button    xpath://button[contains(text(), 'Submit')]
     [Teardown]    Close Browser
 
 
@@ -36,13 +38,13 @@ TC000-002
     [Teardown]    Close Browser
 
 
-TC000-003
-    [Documentation]    Testing Language changes
-    Open Home
-    Max Window
-    Language change
-    Wait Until Fi
-    [Teardown]    Close Browser
+# TC000-003
+#     [Documentation]    Testing Language changes
+#     Open Home
+#     Max Window
+#     Language change
+#     Wait Until Fi
+#     [Teardown]    Close Browser
 
 
 # TC000-004

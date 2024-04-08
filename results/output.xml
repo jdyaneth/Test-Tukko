@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.5 on win32)" generated="2024-04-08T11:04:23.229218" rpa="false" schemaversion="5">
+<suite id="s1" name="Testing-Tukko" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko">
+<suite id="s1-s1" name="Front-End" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\front-end">
+<suite id="s1-s1-s1" name="FEA000" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\front-end\FEA000">
+<suite id="s1-s1-s1-s1" name="FEA000-initial" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\front-end\FEA000\FEA000-initial">
+<suite id="s1-s1-s1-s1-s1" name="FEA000" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\front-end\FEA000\FEA000-initial\FEA000.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="TC000-001" line="15">
+<kw name="Open Home" owner="FEA000">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-08T11:04:23.572848" level="INFO">Opening browser 'Firefox' to base url 'http://128.214.255.43:5175'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-08T11:04:23.572848" elapsed="5.803825"/>
+</kw>
+<status status="PASS" start="2024-04-08T11:04:23.571863" elapsed="5.805451"/>
+</kw>
+<kw name="Max Window" owner="FEA000">
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-08T11:04:29.378324" elapsed="0.282605"/>
+</kw>
+<status status="PASS" start="2024-04-08T11:04:29.377314" elapsed="0.283615"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-08T11:04:29.661931" level="INFO">Clicking element 'css:button[data-state="closed"]'.</msg>
+<arg>css:button[data-state="closed"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-08T11:04:29.661931" elapsed="0.291037"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-08T11:04:29.954987" level="INFO">Title should have 10 or more characters</msg>
+<arg>Title should have 10 or more characters</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-08T11:04:29.954987" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-08T11:04:29.959299" level="INFO">Typing text 'TestingTitle' into text field 'css:input[name="title"]'.</msg>
+<arg>css:input[name="title"]</arg>
+<arg>TestingTitle</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-08T11:04:29.958341" elapsed="0.065322"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-08T11:04:30.024658" level="INFO">Description should have 20 or more characters</msg>
+<arg>Description should have 20 or more characters</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-08T11:04:30.024658" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-08T11:04:30.025657" level="INFO">Typing text 'TestingDescriptionrandomtestgeneratedfortesting' into text field 'css:textarea[name="description"]'.</msg>
+<arg>css:textarea[name="description"]</arg>
+<arg>TestingDescriptionrandomtestgeneratedfortesting</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-08T11:04:30.025657" elapsed="0.066132"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-08T11:04:30.092789" level="INFO">Clicking button 'xpath://button[contains(text(), 'Submit')]'.</msg>
+<arg>xpath://button[contains(text(), 'Submit')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-08T11:04:30.092789" elapsed="0.320897"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-08T11:04:30.413686" elapsed="2.865882"/>
+</kw>
+<doc>Feedback Button check</doc>
+<status status="PASS" start="2024-04-08T11:04:23.570841" elapsed="9.709717"/>
+</test>
+<status status="PASS" start="2024-04-08T11:04:23.268537" elapsed="10.014019"/>
+</suite>
+<status status="PASS" start="2024-04-08T11:04:23.265020" elapsed="10.019537"/>
+</suite>
+<status status="PASS" start="2024-04-08T11:04:23.262019" elapsed="10.023537"/>
+</suite>
+<status status="PASS" start="2024-04-08T11:04:23.259066" elapsed="10.029984"/>
+</suite>
+<status status="PASS" start="2024-04-08T11:04:23.234727" elapsed="10.055346"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Testing-Tukko">Testing-Tukko</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Front-End">Testing-Tukko.Front-End</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="FEA000">Testing-Tukko.Front-End.FEA000</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="FEA000-initial">Testing-Tukko.Front-End.FEA000.FEA000-initial</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1-s1" name="FEA000">Testing-Tukko.Front-End.FEA000.FEA000-initial.FEA000</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
