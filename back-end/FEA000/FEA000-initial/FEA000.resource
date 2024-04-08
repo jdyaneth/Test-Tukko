@@ -8,7 +8,7 @@ Library  Collections
 *** Variables ***
 ${url}   http://128.214.255.43:5173
 ${browser}    Firefox 
-${API_URL}    http://128.214.255.43:3001    
+${API_URL}    http://128.214.255.43:8080    
 
 *** Keywords ***
 Open Home

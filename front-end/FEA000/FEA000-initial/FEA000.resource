@@ -6,9 +6,8 @@ Library  Collections
 
 
 *** Variables ***
-${url}   http://128.214.255.43:5173
+${url}   http://128.214.255.43:5175
 ${browser}    Firefox 
-${API_URL}    http://localhost:8080
 
 *** Keywords ***
 Open Home

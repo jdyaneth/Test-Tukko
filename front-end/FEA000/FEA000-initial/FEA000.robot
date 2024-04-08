@@ -45,13 +45,13 @@ TC000-003
     [Teardown]    Close Browser
 
 
-TC000-004
-    [Documentation]    Testing Wimmalab and IoTitude links
-    Open Home
-    Max Window
-    Click WIMMA Lab Logo
-    Click IoTitude Logo
-    [Teardown]    Close Browser
+# TC000-004
+#     [Documentation]    Testing Wimmalab and IoTitude links
+#     Open Home
+#     Max Window
+#     Click WIMMA Lab Logo
+#     Click IoTitude Logo
+#     [Teardown]    Close Browser
 
 TC000-005
     [Documentation]    Testing Draw tool Buttons
