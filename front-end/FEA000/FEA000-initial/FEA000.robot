@@ -30,10 +30,10 @@ TC000-002
     Open Home
     Max Window
     Theme Change
-    Wait Until Dark Mode
+    Wait Until Light Mode
     Capture Page Screenshot
     Theme Change
-    Wait Until Light Mode
+    Wait Until Dark Mode
     Capture Page Screenshot
     [Teardown]    Close Browser
 

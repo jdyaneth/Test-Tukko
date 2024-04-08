@@ -1,239 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.5 on win32)" generated="2024-04-08T12:21:37.481954" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.11.5 on win32)" generated="2024-04-08T12:33:48.722785" rpa="false" schemaversion="5">
 <suite id="s1" name="Testing-Tukko" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko">
 <suite id="s1-s1" name="Front-End" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\front-end">
 <suite id="s1-s1-s1" name="FEA000" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\front-end\FEA000">
 <suite id="s1-s1-s1-s1" name="FEA000-initial" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\front-end\FEA000\FEA000-initial">
 <suite id="s1-s1-s1-s1-s1" name="FEA000" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\front-end\FEA000\FEA000-initial\FEA000.robot">
-<test id="s1-s1-s1-s1-s1-t1" name="TC000-000" line="6">
+<test id="s1-s1-s1-s1-s1-t1" name="TC000-002" line="28">
 <kw name="Open Home" owner="FEA000">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-08T12:21:37.935075" level="INFO">Opening browser 'Firefox' to base url 'http://128.214.255.43:5175'.</msg>
+<msg time="2024-04-08T12:33:49.083219" level="INFO">Opening browser 'Firefox' to base url 'http://128.214.255.43:5175'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-08T12:21:37.929651" elapsed="6.645995"/>
+<status status="PASS" start="2024-04-08T12:33:49.083219" elapsed="5.964531"/>
 </kw>
-<status status="PASS" start="2024-04-08T12:21:37.929651" elapsed="6.645995"/>
+<status status="PASS" start="2024-04-08T12:33:49.081216" elapsed="5.968376"/>
 </kw>
 <kw name="Max Window" owner="FEA000">
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-04-08T12:21:44.576652" elapsed="0.380944"/>
+<status status="PASS" start="2024-04-08T12:33:55.052600" elapsed="0.348647"/>
 </kw>
-<status status="PASS" start="2024-04-08T12:21:44.576652" elapsed="0.380944"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-08T12:21:44.960120" level="INFO">Clicking element 'css:.leaflet-control-zoom-in'.</msg>
-<arg>css:.leaflet-control-zoom-in</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-08T12:21:44.959106" elapsed="0.271023"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-08T12:21:45.232123" level="INFO">Clicking element 'css:.leaflet-control-zoom-out'.</msg>
-<arg>css:.leaflet-control-zoom-out</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-08T12:21:45.231128" elapsed="0.226538"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-04-08T12:21:45.458660" elapsed="2.751876"/>
-</kw>
-<doc>Testing Zoom in and out elements</doc>
-<status status="PASS" start="2024-04-08T12:21:37.929651" elapsed="10.280885"/>
-</test>
-<test id="s1-s1-s1-s1-s1-t2" name="TC000-001" line="15">
-<kw name="Open Home" owner="FEA000">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-08T12:21:48.210536" level="INFO">Opening browser 'Firefox' to base url 'http://128.214.255.43:5175'.</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-08T12:21:48.210536" elapsed="5.640710"/>
-</kw>
-<status status="PASS" start="2024-04-08T12:21:48.210536" elapsed="5.640710"/>
-</kw>
-<kw name="Max Window" owner="FEA000">
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-04-08T12:21:53.851246" elapsed="0.366062"/>
-</kw>
-<status status="PASS" start="2024-04-08T12:21:53.851246" elapsed="0.366568"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-08T12:21:54.219332" level="INFO">Clicking element 'css:button[data-state="closed"]'.</msg>
-<arg>css:button[data-state="closed"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-08T12:21:54.217814" elapsed="0.331299"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-04-08T12:21:54.550112" level="INFO">Title should have 10 or more characters</msg>
-<arg>Title should have 10 or more characters</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-04-08T12:21:54.550112" elapsed="0.000000"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-08T12:21:54.551113" level="INFO">Typing text 'TestingTitle' into text field 'css:input[name="title"]'.</msg>
-<arg>css:input[name="title"]</arg>
-<arg>TestingTitle</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-08T12:21:54.551113" elapsed="0.034071"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-04-08T12:21:54.586184" level="INFO">Description should have 20 or more characters</msg>
-<arg>Description should have 20 or more characters</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-04-08T12:21:54.586184" elapsed="0.000000"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-08T12:21:54.587183" level="INFO">Typing text 'TestingDescriptionrandomtestgeneratedfortesting' into text field 'css:textarea[name="description"]'.</msg>
-<arg>css:textarea[name="description"]</arg>
-<arg>TestingDescriptionrandomtestgeneratedfortesting</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-08T12:21:54.586184" elapsed="0.061606"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-04-08T12:21:54.648780" level="INFO">Clicking button 'xpath://button[contains(text(), 'Submit')]'.</msg>
-<arg>xpath://button[contains(text(), 'Submit')]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-08T12:21:54.647790" elapsed="0.311735"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-04-08T12:21:54.960561" elapsed="2.815438"/>
-</kw>
-<doc>Feedback Button check</doc>
-<status status="PASS" start="2024-04-08T12:21:48.210536" elapsed="9.565463"/>
-</test>
-<test id="s1-s1-s1-s1-s1-t3" name="TC000-002" line="28">
-<kw name="Open Home" owner="FEA000">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-08T12:21:57.775999" level="INFO">Opening browser 'Firefox' to base url 'http://128.214.255.43:5175'.</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-08T12:21:57.775999" elapsed="5.492611"/>
-</kw>
-<status status="PASS" start="2024-04-08T12:21:57.775999" elapsed="5.493212"/>
-</kw>
-<kw name="Max Window" owner="FEA000">
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-04-08T12:22:03.270245" elapsed="0.361387"/>
-</kw>
-<status status="PASS" start="2024-04-08T12:22:03.270245" elapsed="0.361387"/>
+<status status="PASS" start="2024-04-08T12:33:55.050602" elapsed="0.350645"/>
 </kw>
 <kw name="Theme Change" owner="FEA000">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-08T12:22:03.633007" level="INFO">Clicking element 'xpath://button[@class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 w-10"]'.</msg>
+<msg time="2024-04-08T12:33:55.404244" level="INFO">Clicking element 'xpath://button[@class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 w-10"]'.</msg>
 <arg>xpath://button[@class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 w-10"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-08T12:22:03.633007" elapsed="0.348383"/>
+<status status="PASS" start="2024-04-08T12:33:55.403245" elapsed="0.278223"/>
 </kw>
-<status status="PASS" start="2024-04-08T12:22:03.631632" elapsed="0.349758"/>
+<status status="PASS" start="2024-04-08T12:33:55.402244" elapsed="0.279224"/>
+</kw>
+<kw name="Wait Until Light Mode" owner="FEA000">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>css:body[class="dark"]</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-04-08T12:33:55.682979" elapsed="0.004010"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:body[class=""]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-08T12:33:55.687988" elapsed="0.020587"/>
+</kw>
+<status status="PASS" start="2024-04-08T12:33:55.682469" elapsed="0.026106"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-04-08T12:33:55.913720" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-04-08T12:33:55.709576" elapsed="0.205426"/>
+</kw>
+<kw name="Theme Change" owner="FEA000">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-08T12:33:55.917011" level="INFO">Clicking element 'xpath://button[@class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 w-10"]'.</msg>
+<arg>xpath://button[@class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 w-10"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-08T12:33:55.917011" elapsed="0.337518"/>
+</kw>
+<status status="PASS" start="2024-04-08T12:33:55.916010" elapsed="0.339610"/>
 </kw>
 <kw name="Wait Until Dark Mode" owner="FEA000">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2024-04-08T12:22:09.278981" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-04-08T12:22:09.278981" level="FAIL">Element 'css:body[class="dark"]' not visible after 5 seconds.</msg>
 <arg>css:body[class="dark"]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2024-04-08T12:22:03.982393" elapsed="5.307930">Element 'css:body[class="dark"]' not visible after 5 seconds.</status>
+<status status="PASS" start="2024-04-08T12:33:56.256528" elapsed="0.010032"/>
 </kw>
-<status status="FAIL" start="2024-04-08T12:22:03.982393" elapsed="5.307930">Element 'css:body[class="dark"]' not visible after 5 seconds.</status>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2024-04-08T12:22:09.292946" elapsed="0.000000"/>
-</kw>
-<kw name="Theme Change" owner="FEA000">
-<status status="NOT RUN" start="2024-04-08T12:22:09.292946" elapsed="0.000000"/>
-</kw>
-<kw name="Wait Until Light Mode" owner="FEA000">
-<status status="NOT RUN" start="2024-04-08T12:22:09.292946" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-08T12:33:56.255620" elapsed="0.010940"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-04-08T12:33:56.494167" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2024-04-08T12:22:09.292946" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-08T12:33:56.268010" elapsed="0.226157"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-04-08T12:22:09.292946" elapsed="2.663159"/>
+<status status="PASS" start="2024-04-08T12:33:56.495172" elapsed="2.865607"/>
 </kw>
 <doc>Checking Theme button</doc>
-<status status="FAIL" start="2024-04-08T12:21:57.775999" elapsed="14.180106">Element 'css:body[class="dark"]' not visible after 5 seconds.</status>
+<status status="PASS" start="2024-04-08T12:33:49.080215" elapsed="10.282071"/>
 </test>
-<test id="s1-s1-s1-s1-s1-t4" name="TC000-005" line="58">
-<kw name="Open Home" owner="FEA000">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-08T12:22:11.971844" level="INFO">Opening browser 'Firefox' to base url 'http://128.214.255.43:5175'.</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-08T12:22:11.971844" elapsed="5.753486"/>
-</kw>
-<status status="PASS" start="2024-04-08T12:22:11.971844" elapsed="5.753486"/>
-</kw>
-<kw name="Max Window" owner="FEA000">
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-04-08T12:22:17.725330" elapsed="0.352132"/>
-</kw>
-<status status="PASS" start="2024-04-08T12:22:17.725330" elapsed="0.352132"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-08T12:22:18.078458" level="INFO">Clicking element 'css:div[title="Draw Rectangle"]'.</msg>
-<arg>css:div[title="Draw Rectangle"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-08T12:22:18.078458" elapsed="0.253647"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-08T12:22:18.334111" level="INFO">Clicking element 'css:div[title="Draw Polygons"]'.</msg>
-<arg>css:div[title="Draw Polygons"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-08T12:22:18.333070" elapsed="0.243286"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-08T12:22:18.576356" level="INFO">Clicking element 'css:div[title="Draw Circle"]'.</msg>
-<arg>css:div[title="Draw Circle"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-08T12:22:18.576356" elapsed="0.220254"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-08T12:22:18.797590" level="INFO">Clicking element 'css:div[title="Remove Layers"]'.</msg>
-<arg>css:div[title="Remove Layers"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-08T12:22:18.796610" elapsed="0.220134"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-04-08T12:22:19.017271" elapsed="2.710196"/>
-</kw>
-<doc>Testing Draw tool Buttons</doc>
-<status status="PASS" start="2024-04-08T12:22:11.971844" elapsed="9.755623"/>
-</test>
-<status status="FAIL" start="2024-04-08T12:21:37.534323" elapsed="44.206321"/>
+<status status="PASS" start="2024-04-08T12:33:48.764988" elapsed="10.599307"/>
 </suite>
-<status status="FAIL" start="2024-04-08T12:21:37.532312" elapsed="44.208332"/>
+<status status="PASS" start="2024-04-08T12:33:48.762046" elapsed="10.605247"/>
 </suite>
-<status status="FAIL" start="2024-04-08T12:21:37.529316" elapsed="44.211328"/>
+<status status="PASS" start="2024-04-08T12:33:48.757951" elapsed="10.610521"/>
 </suite>
-<status status="FAIL" start="2024-04-08T12:21:37.521266" elapsed="44.225425"/>
+<status status="PASS" start="2024-04-08T12:33:48.754664" elapsed="10.616109"/>
 </suite>
-<status status="FAIL" start="2024-04-08T12:21:37.498043" elapsed="44.249658"/>
+<status status="PASS" start="2024-04-08T12:33:48.728920" elapsed="10.642851"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="3" fail="1" skip="0" id="s1" name="Testing-Tukko">Testing-Tukko</stat>
-<stat pass="3" fail="1" skip="0" id="s1-s1" name="Front-End">Testing-Tukko.Front-End</stat>
-<stat pass="3" fail="1" skip="0" id="s1-s1-s1" name="FEA000">Testing-Tukko.Front-End.FEA000</stat>
-<stat pass="3" fail="1" skip="0" id="s1-s1-s1-s1" name="FEA000-initial">Testing-Tukko.Front-End.FEA000.FEA000-initial</stat>
-<stat pass="3" fail="1" skip="0" id="s1-s1-s1-s1-s1" name="FEA000">Testing-Tukko.Front-End.FEA000.FEA000-initial.FEA000</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Testing-Tukko">Testing-Tukko</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Front-End">Testing-Tukko.Front-End</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="FEA000">Testing-Tukko.Front-End.FEA000</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="FEA000-initial">Testing-Tukko.Front-End.FEA000.FEA000-initial</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1-s1" name="FEA000">Testing-Tukko.Front-End.FEA000.FEA000-initial.FEA000</stat>
 </suite>
 </statistics>
 <errors>
