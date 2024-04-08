@@ -30,7 +30,8 @@ Language change
     Click Button    xpath://button[contains(text(), 'EN')]
 
 Wait Until Fi
-    Wait Until Element Is Visible    css:button[class="languageToggle fi fi-fi"]
+    Wait Until Element Is Visible    xpath://button[contains(text(), 'FI')]
+    Wait Until Element Is Visible    css:input[placeholder="Etsi paikka"]
 
 Click WIMMA Lab Logo
     Click Element    css=.wimmaLabLogo

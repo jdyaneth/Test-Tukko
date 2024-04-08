@@ -38,13 +38,13 @@ TC000-002
     [Teardown]    Close Browser
 
 
-# TC000-003
-#     [Documentation]    Testing Language changes
-#     Open Home
-#     Max Window
-#     Language change
-#     Wait Until Fi
-#     [Teardown]    Close Browser
+TC000-003
+    [Documentation]    Testing Language changes
+    Open Home
+    Max Window
+    Language change
+    Wait Until Fi
+    [Teardown]    Close Browser
 
 
 # TC000-004
