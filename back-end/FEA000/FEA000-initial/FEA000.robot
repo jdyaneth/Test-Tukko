@@ -51,9 +51,6 @@ TC000-009
     ${response}=  GET On Session  mysession  /api/Stations      
     Status Should Be  200  ${response}
     
-    # ${name}=  Get Value From Json  ${response.json()}[0]  name
-    # ${nameFromList}=  Get From List   ${name}  0
-    # Should be equal  ${nameFromList}  vt1_Karnainen
     # Status	
     # 200: A list of sensors works.
     # 400: Invalid parameter value.

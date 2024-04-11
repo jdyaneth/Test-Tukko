@@ -1,205 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.5 on win32)" generated="2024-04-08T21:02:15.921607" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.11.5 on win32)" generated="2024-04-11T17:38:29.477187" rpa="false" schemaversion="5">
 <suite id="s1" name="Testing-Tukko" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko">
-<suite id="s1-s1" name="Back-End" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\back-end">
-<suite id="s1-s1-s1" name="FEA000" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\back-end\FEA000">
-<suite id="s1-s1-s1-s1" name="FEA000-initial" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\back-end\FEA000\FEA000-initial">
-<suite id="s1-s1-s1-s1-s1" name="FEA000" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\back-end\FEA000\FEA000-initial\FEA000.robot">
-<test id="s1-s1-s1-s1-s1-t1" name="TC000-006" line="8">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-04-08T21:02:16.377486" level="INFO">Creating Session using : alias=mysession, url=http://128.214.255.43:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
-<arg>mysession</arg>
-<arg>${API_URL}</arg>
-<arg>verify=true</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-04-08T21:02:16.377486" elapsed="0.000999"/>
+<suite id="s1-s1" name="Front-End" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\front-end">
+<suite id="s1-s1-s1" name="FEA109" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\front-end\FEA109">
+<suite id="s1-s1-s1-s1" name="Test-Suit" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\front-end\FEA109\test-suit">
+<suite id="s1-s1-s1-s1-s1" name="FEA109" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\front-end\FEA109\test-suit\FEA109.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="TC109-001" line="6">
+<kw name="Open Home" owner="FEA109">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-11T17:38:29.839436" level="INFO">Opening browser 'Firefox' to base url 'http://128.214.255.43:5175'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-11T17:38:29.839436" elapsed="5.797193"/>
 </kw>
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-04-08T21:02:16.425543" level="INFO">GET Request : url=http://128.214.255.43:8080/api/stations/24607 
- path_url=/api/stations/24607 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2024-04-08T21:02:16.425543" level="INFO">GET Response : url=http://128.214.255.43:8080/api/stations/24607 
- status=200, reason=OK 
- headers={'Content-Type': 'application/json; charset=utf-8', 'Date': 'Mon, 08 Apr 2024 18:02:15 GMT', 'Server': 'Kestrel', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'Vary': 'Accept-Encoding'} 
- body={"tmsNumber":1607,"dataUpdatedTime":"2024-03-13T12:50:05+00:00","name":"vt1_Karnainen","names":{"fi":"Tie 1 Lohja Karnainen","sv":"Väg 1 Lojo Karnais","en":"Road 1 Lohja Karnainen"},"coordinates":{"longitude":24.079464,"latitude":60.289063},"roadNumber":1,"roadSection":12,"carriageway":"DUAL_CARRIAGEWAY_RIGHT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Lohja","municipalityCode":444,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Turku","direction1MunicipalityCode":853,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":95,"freeFlowSpeed2":95,"id":"24607"} 
- </msg>
-<msg time="2024-04-08T21:02:16.426554" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>/api/stations/24607</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-04-08T21:02:16.378485" elapsed="0.048069"/>
+<status status="PASS" start="2024-04-11T17:38:29.838333" elapsed="5.798296"/>
 </kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>200</arg>
-<arg>${response}</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2024-04-08T21:02:16.427551" elapsed="0.000000"/>
+<kw name="Max Window" owner="FEA109">
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-11T17:38:35.639020" elapsed="0.352274"/>
 </kw>
-<kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2024-04-08T21:02:16.506039" level="INFO">${name} = ['vt1_Karnainen']</msg>
-<var>${name}</var>
-<arg>${response.json()}</arg>
-<arg>name</arg>
-<doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2024-04-08T21:02:16.428552" elapsed="0.078014"/>
+<status status="PASS" start="2024-04-11T17:38:35.637921" elapsed="0.353373"/>
 </kw>
-<kw name="Get From List" owner="Collections">
-<msg time="2024-04-08T21:02:16.507610" level="INFO">${nameFromList} = vt1_Karnainen</msg>
-<var>${nameFromList}</var>
-<arg>${name}</arg>
-<arg>0</arg>
-<doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2024-04-08T21:02:16.507083" elapsed="0.001044"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-11T17:38:35.996291" level="INFO">Typing text 'turku' into text field 'css:input[name="query"]'.</msg>
+<arg>css:input[name="query"]</arg>
+<arg>turku</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-11T17:38:35.995293" elapsed="0.090612"/>
 </kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${nameFromList}</arg>
-<arg>vt1_Karnainen</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-04-08T21:02:16.508653" elapsed="0.000522"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-11T17:38:36.087906" level="INFO">Clicking element 'xpath=//button[@class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline h-10 w-10 shrink-0"]'.</msg>
+<arg>xpath=//button[@class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline h-10 w-10 shrink-0"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-11T17:38:36.086903" elapsed="0.242194"/>
 </kw>
-<doc>GET stations/{id} test on API</doc>
-<tag>Smoke</tag>
-<status status="PASS" start="2024-04-08T21:02:16.375479" elapsed="0.134226"/>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@class="px-5 py-2.5 border-b last:border-0 hover:bg-muted hover:cursor-pointer"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-11T17:38:36.330606" elapsed="0.218113"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-11T17:38:36.549719" level="INFO">The Search result has appeared</msg>
+<arg>The Search result has appeared</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-11T17:38:36.549719" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-11T17:38:36.551189" level="INFO">Clicking element 'xpath=//div[@class="px-5 py-2.5 border-b last:border-0 hover:bg-muted hover:cursor-pointer"]'.</msg>
+<arg>xpath=//div[@class="px-5 py-2.5 border-b last:border-0 hover:bg-muted hover:cursor-pointer"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-11T17:38:36.551189" elapsed="0.226307"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-04-11T17:38:42.144206" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-24.png"&gt;&lt;img src="selenium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-04-11T17:38:42.145360" level="FAIL">Element 'xpath=//img[@src="https://a.tile.openstreetmap.org/12/2301/1179.png"]' not visible after 5 seconds.</msg>
+<arg>xpath=//img[@src="https://a.tile.openstreetmap.org/12/2301/1179.png"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-04-11T17:38:36.778775" elapsed="5.370221">Element 'xpath=//img[@src="https://a.tile.openstreetmap.org/12/2301/1179.png"]' not visible after 5 seconds.</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Location: (60.45721779774396, 22.236328125) will be visible on the map. (True Location: Pitkämäki, Turku)</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-04-11T17:38:42.149142" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//button[text()="Close"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-04-11T17:38:42.150144" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-11T17:38:42.151143" elapsed="2.770781"/>
+</kw>
+<doc>Search bar check (Front-end)</doc>
+<status status="FAIL" start="2024-04-11T17:38:29.836276" elapsed="15.086650">Element 'xpath=//img[@src="https://a.tile.openstreetmap.org/12/2301/1179.png"]' not visible after 5 seconds.</status>
 </test>
-<test id="s1-s1-s1-s1-s1-t2" name="TC000-007" line="19">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-04-08T21:02:16.513139" level="INFO">Creating Session using : alias=mysession, url=http://128.214.255.43:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
-<arg>mysession</arg>
-<arg>${API_URL}</arg>
-<arg>verify=true</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-04-08T21:02:16.512103" elapsed="0.001036"/>
-</kw>
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-04-08T21:02:16.571105" level="INFO">GET Request : url=http://128.214.255.43:8080/api/Roadworks?primaryPointRoadNumber=8102&amp;primaryPointRoadSection=1&amp;secondaryPointRoadNumber=8102&amp;secondaryPointRoadSection=5&amp;severity=HIGH 
- path_url=/api/Roadworks?primaryPointRoadNumber=8102&amp;primaryPointRoadSection=1&amp;secondaryPointRoadNumber=8102&amp;secondaryPointRoadSection=5&amp;severity=HIGH 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2024-04-08T21:02:16.572162" level="INFO">GET Response : url=http://128.214.255.43:8080/api/Roadworks?primaryPointRoadNumber=8102&amp;primaryPointRoadSection=1&amp;secondaryPointRoadNumber=8102&amp;secondaryPointRoadSection=5&amp;severity=HIGH 
- status=200, reason=OK 
- headers={'Content-Type': 'application/json; charset=utf-8', 'Date': 'Mon, 08 Apr 2024 18:02:15 GMT', 'Server': 'Kestrel', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'Vary': 'Accept-Encoding'} 
- body=[{"primaryPointRoadNumber":12,"primaryPointRoadSection":127,"secondaryPointRoadNumber":12,"secondaryPointRoadSection":127,"direction":"BOTH","startTime":"2024-04-07T21:00:00+00:00","endTime":"2024-04-09T20:59:59.999+00:00","severity":"HIGH","workTypes":[{"type":"BRIDGE","description":"Siltatyö"}],"workingHours":[{"weekday":"MONDAY","startTime":"20:00:00","endTime":"06:00:00"},{"weekday":"TUESDAY","startTime":"20:00:00","endTime":"06:00:00"}],"restrictions":[{"type":"SINGLE_LANE_CLOSED","name":"Yksi ajokaista suljettu","quantity":0}],"id":"50428525"},{"primaryPointRoadNumber":4,"primaryPointRoadSection":116,"secondaryPointRoadNumber":4,"secondaryPointRoadSection":201,"direction":"UNKNOWN","startTime":"2024-04-07T21:00:00+00:00","endTime":"2024-04-09T20:59:59.999+00:00","severity":"HIGH","workTypes":[{"type":"MAINTENANCE","description":"Kunnossapito- ja hoitotyö"},{"type":"OTHER","description":"Valuasfalttipaikkaus"}],"workingHours":[{"weekday":"TUESDAY","startTime":"19:00:00","endTime":"02:00:00"},{"weekday":"MONDAY","startTime":"19:00:00","endTime":"02:00:00"}],"restrictions":[{"type":"NARROW_LANES","name":"Ajokaista kavennettu työmaan kohdalla","quantity":0}],"id":"50428522"},{"primaryPointRoadNumber":3,"primaryPointRoadSection":220,"secondaryPointRoadNumber":3,"secondaryPointRoadSection":224,"direction":"UNKNOWN","startTime":"2024-04-09T21:00:00+00:00","endTime":"2024-04-10T20:59:59.999+00:00","severity":"HIGH","workTypes":[{"type":"OTHER","description":"Koeporaus"}],"workingHours":[{"weekday":"WEDNESDAY","startTime":"08:00:00","endTime":"00:00:00"}],"restrictions":[{"type":"SPEED_LIMIT","name":"Nopeusrajoitus","quantity":80,"unit":"km/h"},{"type":"SPEED_LIMIT_LENGTH","name":"Matka, jolla nopeusrajoitus voimassa","quantity":800,"unit":"m"}],"id":"50428521"},{"primaryPointRoadNumber":67,"primaryPointRoadSection":16,"secondaryPointRoadNumber":67,"secondaryPointRoadSection":17,"direction":"UNKNOWN","startTime":"2024-04-09T21:00:00+00:00","endTime":"2024-04-10T20:59:59.999+00:00","severity":"HIGH","workTypes":[{"type":"OTHER","description":"Koeporaus"}],"workingHours":[{"weekday":"WEDNESDAY","startTime":"08:00:00","endTime":"00:00:00"}],"restrictions":[{"type":"SPEED_LIMIT","name":"Nopeusrajoitus","quantity":80,"unit":"km/h"},{"type":"SPEED_LIMIT_LENGTH","name":"Matka, jolla nopeusrajoitus voimassa","quantity":800,"unit":"m"}],"id":"50428520"},{"primaryPointRoadNumber":28,"primaryPointRoadSection":4,"secondaryPointRoadNumber":28,"secondaryPointRoadSection":6,"direction":"UNKNOWN","startTime":"2024-04-09T21:00:00+00:00","endTime":"2024-04-11T20:59:59.999+00:00","severity":"HIGH","workTypes":[{"type":"OTHER","description":"Koeporaus"}],"workingHours":[{"weekday":"WEDNESDAY","startTime":"06:00:00","endTime":"00:00:00"},{"weekday":"THURSDAY","startTime":"06:00:00","endTime":"00:00:00"}],"restrictions":[{"type":"SPEED_LIMIT","name":"Nopeusrajoitus","quantity":80,"unit":"km/h"}],"id":"50428519"},{"primaryPointRoadNumber":19,"primaryPointRoadSection":18,"secondaryPointRoadNumber":19,"secondaryPointRoadSection":20,"direction":"UNKNOWN","startTime":"2024-04-09T21:00:00+00:00","endTime":"2024-04-11T20:59:59.999+00:00","severity":"HIGH","workTypes":[{"type":"OTHER","description":"Koeporaus"}],"workingHours":[{"weekday":"WEDNESDAY","startTime":"06:00:00","endTime":"00:00:00"},{"weekday":"THURSDAY","startTime":"06:00:00","endTime":"00:00:00"}],"restrictions":[{"type":"SPEED_LIMIT","name":"Nopeusrajoitus","quantity":80,"unit":"km/h"},{"type":"SPEED_LIMIT_LENGTH","name":"Matka, jolla nopeusrajoitus voimassa","quantity":800,"unit":"m"}],"id":"50428518"},{"primaryPointRoadNumber":16,"primaryPointRoadSection":16,"secondaryPointRoadNumber":16,"secondaryPointRoadSection":21,"direction":"UNKNOWN","startTime":"2024-04-09T21:00:00+00:00","endTime":"2024-04-11T20:59:59.999+00:00","severity":"HIGH","workTypes":[{"type":"OTHER","description":"Koeporaus"}],"workingHours":[{"weekday":"WEDNESDAY","startTime":"06:00:00","endTime":"00:00:00"},{"weekday":"THURSDAY","startTime":"06:00:00","endTime":"00:00:00"}],"restrictions":[{"type":"SPEED_LIMIT","name":"Nopeusrajoitus","quantity":80,"unit":"km/h"}],"id":"50428517"},{"primaryPointRoadNumber":724,"primaryPointRoadSection":1,"secondaryPointRoadNumber":724,"secondaryPointRoadSection":2,"direction":"UNKNOWN","startTime":"2024-04-09T21:00:00+00:00","endTime":"2024-04-10T20:59:59.999+00:00","severity":"HIGH","workTypes":[{"type":"OTHER","description":"Koeporaus"}],"workingHours":[{"weekday":"WEDNESDAY","startTime":"08:00:00","endTime":"00:00:00"}],"restrictions":[{"type":"SPEED_LIMIT","name":"Nopeusrajoitus","quantity":80,"unit":"km/h"},{"type":"SPEED_LIMIT_LENGTH","name":"Matka, jolla nopeusrajoitus voimassa","quantity":800,"unit":"m"}],"id":"50428515"},{"primaryPointRoadNumber":8,"primaryPointRoadSection":237,"secondaryPointRoadNumber":8,"secondaryPointRoadSection":237,"direction":"UNKNOWN","startTime":"2024-04-09T21:00:00+00:00","endTime":"2024-04-10T20:59:59.999+00:00","severity":"HIGH","workTypes":[{"type":"OTHER","description":"Koeporaus"}],"workingHours":[{"weekday":"WEDNESDAY","startTime":"08:00:00","endTime":"00:00:00"}],"restrictions":[{"type":"SPEED_LIMIT","name":"Nopeusrajoitus","quantity":80,"unit":"km/h"},{"type":"SPEED_LIMIT_LENGTH","name":"Matka, jolla nopeusrajoitus voimassa","quantity":800,"unit":"m"}],"id":"50428514"},{"primaryPointRoadNumber":12,"primaryPointRoadSection":205,"secondaryPointRoadNumber":12,"secondaryPointRoadSection":202,"direction":"UNKNOWN","startTime":"2024-04-07T21:00:00+00:00","endTime":"2024-04-08T20:59:59.999+00:00","severity":"HIGH","workTypes":[{"type":"MAINTENANCE","description":"Kunnossapito- ja hoitotyö"},{"type":"OTHER","description":"Valuasfalttipaikkaus"}],"workingHours":[{"weekday":"MONDAY","startTime":"18:00:00","endTime":"06:00:00"}],"restrictions":[],"id":"50428513"},{"primaryPointRoadNumber":476,"primaryPointRoadSection":16,"secondaryPointRoadNumber":476,"secondaryPointRoadSection":16,"direction":"BOTH","startTime":"2024-04-09T21:00:00+00:00","endTime":"2024-04-19T20:59:59.999+00:00","severity":"HIGH","workTypes":[{"type":"BURIED_CABLES","description":"Kaapelityö"},{"type":"OTHER","description":""}],"workingHours":[{"weekday":"THURSDAY","startTime":"07:00:00","endTime":"15:30:00"},{"weekday":"FRIDAY","startTime":"07:00:00","endTime":"15:30:00"},{"weekday":"TUESDAY","startTime":"07:00:00","endTime":"15:30:00"},{"weekday":"WEDNESDAY","startTime":"07:00:00","endTime":"15:30:00"},{"weekday":"MONDAY","startTime":"07:00:00","endTime":"15:30:00"}],"restrictions":[{"type":"SLOW_MOVING_MAINTENANCE_VEHICLE","name":"Työkoneita liikenteen seassa","quantity":0},{"type":"SPEED_LIMIT","name":"Nopeusrajoitus","quantity":50,"unit":"km/h"},{"type":"SPEED_LIMIT_LENGTH","name":"Matka, jolla nopeusrajoitus voimassa","quantity":1000,"unit":"m"}],"id":"50428511"},{"primaryPointRoadNumber":104,"primaryPointRoadSection":7,"secondaryPointRoadNumber":104,"secondaryPointRoadSection":10,"direction":"BOTH","startTime":"2024-04-07T21:00:00+00:00","endTime":"2024-05-10T20:59:59.999+00:00","severity":"HIGH","workTypes":[{"type":"STRUCTURAL_IMPROVEMENT","description":"Rakenteen parannus"},{"type":"RESURFACING","description":"Päällystys- tai paikkaustyö"},{"type":"OTHER","description":""}],"workingHours":[{"weekday":"FRIDAY","startTime":"05:00:00","endTime":"23:00:00"},{"weekday":"MONDAY","startTime":"05:00:00","endTime":"23:00:00"},{"weekday":"TUESDAY","startTime":"05:00:00","endTime":"23:00:00"},{"weekday":"THURSDAY","startTime":"05:00:00","endTime":"23:00:00"},{"weekday":"WEDNESDAY","startTime":"05:00:00","endTime":"23:00:00"}],"restrictions":[{"type":"SINGLE_ALTERNATE_LINE_TRAFFIC","name":"Liikenne ohjataan vuorotellen tapahtumapaikan ohi","quantity":0},{"type":"TRAFFIC_LIGHTS","name":"Liikennevalot","quantity":0},{"type":"SINGLE_LANE_CLOSED","name":"Yksi ajokaista suljettu","quantity":0},{"type":"SPEED_LIMIT","name":"Nopeusrajoitus","quantity":50,"unit":"km/h"}],"id":"50428509"},{"primaryPointRoadNumber":5,"primaryPointRoadSection":155,"secondaryPointRoadNumber":5,"secondaryPointRoadSection":158,"direction":"POS","startTime":"2024-04-07T21:00:00+00:00","endTime":"2024-04-08T20:59:59.999+00:00","severity":"HIGH","workTypes":[{"type":"LIGHTING","description":"Valaistustyö"}],"workingHours":[{"weekday":"MONDAY","startTime":"13:30:00","endTime":"16:30:00"}],"restrictions":[{"type":"NARROW_LANES","name":"Ajokaista kavennettu työmaan kohdalla","quantity":0},{"type":"SPEED_LIMIT","name":"Nopeusrajoitus","quantity":80,"unit":"km/h"}],"id":"50428506"},{"primaryPointRoadNumber":51,"primaryPointRoadSection":14,"secondaryPointRoadNumber":51,"secondaryPointRoadSection":12,"direction":"BOTH","startTime":"2024-04-14T21:00:00+00:00","endTime":"2024-06-30T20:59:59.999+00:00","severity":"HIGH","workTypes":[{"type":"BRIDGE","description":"Siltatyö"},{"type":"OTHER","description":""}],"workingHours":[{"weekday":"THURSDAY","startTime":"06:00:00","endTime":"20:00:00"},{"weekday":"WEDNESDAY","startTime":"06:00:00","endTime":"20:00:00"},{"weekday":"FRIDAY","startTime":"06:00:00","endTime":"20:00:00"},{"weekday":"TUESDAY","startTime":"06:00:00","endTime":"20:00:00"},{"weekday":"MONDAY","startTime":"06:00:00","endTime":"20:00:00"}],"restrictions":[{"type":"VEHICLE_HEIGHT_LIMIT","name":"Ajoneuvon maksimikorkeus","quantity":5,"unit":"m"},{"type":"VEHICLE_WIDTH_LIMIT","name":"Ajoneuvon maksimileveys","quantity":6,"unit":"m"},{"type":"VEHICLE_LENGTH_LIMIT","name":"Ajoneuvon maksimipituus","quantity":25,"unit":"m"},{"type":"NARROW_LANES","name":"Ajokaista kavennettu työmaan kohdalla","quantity":0},{"type":"SLOW_MOVING_MAINTENANCE_VEHICLE","name":"Työkoneita liikenteen seassa","quantity":0},{"type":"SPEED_LIMIT","name":"Nopeusrajoitus","quantity":50,"unit":"km/h"},{"type":"SPEED_LIMIT_LENGTH","name":"Matka, jolla nopeusrajoitus voimassa","quantity":200,"unit":"m"}],"id":"50428503"},{"primaryPointRoadNumber":3171,"primaryPointRoadSection":1,"secondaryPointRoadNumber":3171,"secondaryPointRoadSection":2,"di... (set the log level to DEBUG or TRACE to see the full content) 
- </msg>
-<msg time="2024-04-08T21:02:16.574297" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>/api/Roadworks</arg>
-<arg>params=primaryPointRoadNumber=8102&amp;primaryPointRoadSection=1&amp;secondaryPointRoadNumber=8102&amp;secondaryPointRoadSection=5&amp;severity=HIGH</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-04-08T21:02:16.514658" elapsed="0.059639"/>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>200</arg>
-<arg>${response}</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2024-04-08T21:02:16.575335" elapsed="0.000984"/>
-</kw>
-<doc>GET /roadworks test on API</doc>
-<tag>Smoke</tag>
-<status status="PASS" start="2024-04-08T21:02:16.510882" elapsed="0.065941"/>
-</test>
-<test id="s1-s1-s1-s1-s1-t3" name="TC000-008" line="33">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-04-08T21:02:16.581673" level="INFO">Creating Session using : alias=mysession, url=http://128.214.255.43:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
-<arg>mysession</arg>
-<arg>${API_URL}</arg>
-<arg>verify=true</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-04-08T21:02:16.580636" elapsed="0.001560"/>
-</kw>
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-04-08T21:02:16.602443" level="INFO">GET Request : url=http://128.214.255.43:8080/api/Sensors?stationId=24607 
- path_url=/api/Sensors?stationId=24607 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2024-04-08T21:02:16.602976" level="INFO">GET Response : url=http://128.214.255.43:8080/api/Sensors?stationId=24607 
- status=200, reason=OK 
- headers={'Content-Type': 'application/json; charset=utf-8', 'Date': 'Mon, 08 Apr 2024 18:02:15 GMT', 'Server': 'Kestrel', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'Vary': 'Accept-Encoding'} 
- body=[{"sensorId":"5054","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-08T16:00:00+00:00","timeWindowEnd":"2024-04-08T17:00:00+00:00","measuredTime":"2024-04-08T17:57:53+00:00","unit":"kpl/h","value":337,"id":"246075054"},{"sensorId":"5055","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-08T16:00:00+00:00","timeWindowEnd":"2024-04-08T17:00:00+00:00","measuredTime":"2024-04-08T17:57:53+00:00","unit":"kpl/h","value":279,"id":"246075055"},{"sensorId":"5056","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-08T16:00:00+00:00","timeWindowEnd":"2024-04-08T17:00:00+00:00","measuredTime":"2024-04-08T17:57:53+00:00","unit":"km/h","value":107,"id":"246075056"},{"sensorId":"5057","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-08T16:00:00+00:00","timeWindowEnd":"2024-04-08T17:00:00+00:00","measuredTime":"2024-04-08T17:57:53+00:00","unit":"km/h","value":107,"id":"246075057"},{"sensorId":"5058","stationId":"24607","name":"KESKINOPEUS_5MIN_KIINTEA_SUUNTA1_VVAPAAS1","timeWindowStart":"2024-04-08T17:50:00+00:00","timeWindowEnd":"2024-04-08T17:55:00+00:00","measuredTime":"2024-04-08T17:57:53+00:00","unit":"***","value":117,"id":"246075058"},{"sensorId":"5061","stationId":"24607","name":"KESKINOPEUS_5MIN_KIINTEA_SUUNTA2_VVAPAAS2","timeWindowStart":"2024-04-08T17:50:00+00:00","timeWindowEnd":"2024-04-08T17:55:00+00:00","measuredTime":"2024-04-08T17:57:53+00:00","unit":"***","value":109,"id":"246075061"},{"sensorId":"5116","stationId":"24607","name":"OHITUKSET_5MIN_LIUKUVA_SUUNTA1","measuredTime":"2024-04-08T17:57:53+00:00","unit":"kpl/h","value":228,"id":"246075116"},{"sensorId":"5119","stationId":"24607","name":"OHITUKSET_5MIN_LIUKUVA_SUUNTA2","measuredTime":"2024-04-08T17:57:53+00:00","unit":"kpl/h","value":204,"id":"246075119"},{"sensorId":"5122","stationId":"24607","name":"KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1","measuredTime":"2024-04-08T17:57:53+00:00","unit":"km/h","value":107,"id":"246075122"},{"sensorId":"5125","stationId":"24607","name":"KESKINOPEUS_5MIN_LIUKUVA_SUUNTA2","measuredTime":"2024-04-08T17:57:53+00:00","unit":"km/h","value":105,"id":"246075125"},{"sensorId":"5158","stationId":"24607","name":"KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1_VVAPAAS1","measuredTime":"2024-04-08T17:57:53+00:00","unit":"***","value":112,"id":"246075158"},{"sensorId":"5161","stationId":"24607","name":"KESKINOPEUS_5MIN_LIUKUVA_SUUNTA2_VVAPAAS2","measuredTime":"2024-04-08T17:57:53+00:00","unit":"***","value":111,"id":"246075161"},{"sensorId":"5164","stationId":"24607","name":"OHITUKSET_5MIN_LIUKUVA_SUUNTA1_MS1","measuredTime":"2024-04-08T17:57:53+00:00","unit":"***","value":8,"id":"246075164"},{"sensorId":"5168","stationId":"24607","name":"OHITUKSET_5MIN_LIUKUVA_SUUNTA2_MS2","measuredTime":"2024-04-08T17:57:53+00:00","unit":"***","value":7,"id":"246075168"}] 
- </msg>
-<msg time="2024-04-08T21:02:16.602976" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>/api/Sensors</arg>
-<arg>params=stationId=24607</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-04-08T21:02:16.582769" elapsed="0.020743"/>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>200</arg>
-<arg>${response}</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2024-04-08T21:02:16.604042" elapsed="0.001038"/>
-</kw>
-<doc>GET /sensors test on API</doc>
-<tag>Smoke</tag>
-<status status="PASS" start="2024-04-08T21:02:16.578748" elapsed="0.026332"/>
-</test>
-<test id="s1-s1-s1-s1-s1-t4" name="TC000-009" line="47">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-04-08T21:02:16.607980" level="INFO">Creating Session using : alias=mysession, url=http://128.214.255.43:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
-<arg>mysession</arg>
-<arg>${API_URL}</arg>
-<arg>verify=true</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-04-08T21:02:16.607681" elapsed="0.000809"/>
-</kw>
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-04-08T21:02:16.694549" level="INFO">GET Request : url=http://128.214.255.43:8080/api/Stations 
- path_url=/api/Stations 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2024-04-08T21:02:16.694549" level="INFO">GET Response : url=http://128.214.255.43:8080/api/Stations 
- status=200, reason=OK 
- headers={'Content-Type': 'application/json; charset=utf-8', 'Date': 'Mon, 08 Apr 2024 18:02:16 GMT', 'Server': 'Kestrel', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'Vary': 'Accept-Encoding'} 
- body=[{"tmsNumber":20004,"dataUpdatedTime":"2023-05-09T08:08:00+00:00","name":"vt1_Espoo_Kasavuori","names":{"fi":"Ramppi 21106 Hki, penkka","sv":"Ramppi 21106 Hki, penkka","en":"Ramppi 21106 Hki, penkka"},"coordinates":{"longitude":24.680272,"latitude":60.210344},"roadNumber":1,"roadSection":5,"carriageway":"DUAL_CARRIAGEWAY_LEFT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Espoo","municipalityCode":49,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Turku","direction1MunicipalityCode":853,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20004"},{"tmsNumber":20002,"dataUpdatedTime":"2023-10-26T06:19:26+00:00","name":"vt1_Espoo_Hirvisuo","names":{"fi":"LML012920","sv":"LML012920","en":"LML012920"},"coordinates":{"longitude":24.637997,"latitude":60.220898},"roadNumber":1,"roadSection":6,"carriageway":"ONE_CARRIAGEWAY","side":"RIGHT","municipality":"Espoo","municipalityCode":49,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Turku","direction1MunicipalityCode":853,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20002"},{"tmsNumber":20005,"dataUpdatedTime":"2024-01-30T11:27:56+00:00","name":"vt1_Espoo_Sepänkylä_LML","names":{"fi":"LML014214","sv":"LML014214","en":"LML014214"},"coordinates":{"longitude":24.729261,"latitude":60.200952},"roadNumber":1,"roadSection":5,"carriageway":"DUAL_CARRIAGEWAY_LEFT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Espoo","municipalityCode":49,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Turku","direction1MunicipalityCode":853,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20005"},{"tmsNumber":20006,"dataUpdatedTime":"2023-05-09T08:08:00+00:00","name":"vt1_Espoo_Kuurinniitty","names":{"fi":"LML014215","sv":"LML014215","en":"LML014215"},"coordinates":{"longitude":24.710207,"latitude":60.200669},"roadNumber":1,"roadSection":5,"carriageway":"DUAL_CARRIAGEWAY_LEFT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Espoo","municipalityCode":49,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Turku","direction1MunicipalityCode":853,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20006"},{"tmsNumber":20007,"dataUpdatedTime":"2023-05-09T08:08:00+00:00","name":"vt1_Espoo_Tuomarila","names":{"fi":"LML014216","sv":"LML014216","en":"LML014216"},"coordinates":{"longitude":24.695188,"latitude":60.205637},"roadNumber":1,"roadSection":5,"carriageway":"DUAL_CARRIAGEWAY_LEFT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Espoo","municipalityCode":49,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Turku","direction1MunicipalityCode":853,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20007"},{"tmsNumber":20009,"dataUpdatedTime":"2023-05-09T08:08:00+00:00","name":"vt1_Espoo_Stensgård","names":{"fi":"Ramppi 21102","sv":"Ramppi 21102","en":"Ramppi 21102"},"coordinates":{"longitude":24.749333,"latitude":60.205067},"roadNumber":1,"roadSection":5,"carriageway":"DUAL_CARRIAGEWAY_RIGHT_IN_INCREASING_DIRECTION","side":"RIGHT","municipality":"Espoo","municipalityCode":49,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Turku","direction1MunicipalityCode":853,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20009"},{"tmsNumber":20010,"dataUpdatedTime":"2023-05-09T08:08:00+00:00","name":"vt1_Espoo_Turveradantie","names":{"fi":"Ramppi 21102","sv":"Ramppi 21102","en":"Ramppi 21102"},"coordinates":{"longitude":24.785277,"latitude":60.206768},"roadNumber":1,"roadSection":4,"carriageway":"DUAL_CARRIAGEWAY_LEFT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Espoo","municipalityCode":49,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Turku","direction1MunicipalityCode":853,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20010"},{"tmsNumber":20011,"dataUpdatedTime":"2023-05-09T08:08:00+00:00","name":"vt1_Espoo_Sinimäki","names":{"fi":"Ramppi 21102","sv":"Ramppi 21102","en":"Ramppi 21102"},"coordinates":{"longitude":24.776775,"latitude":60.205988},"roadNumber":1,"roadSection":4,"carriageway":"DUAL_CARRIAGEWAY_LEFT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Espoo","municipalityCode":49,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Turku","direction1MunicipalityCode":853,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20011"},{"tmsNumber":20016,"dataUpdatedTime":"2023-05-09T08:08:00+00:00","name":"vt1_Espoo_Säterinmetsä_2_Hki","names":{"fi":"Ramppi 21102","sv":"Ramppi 21102","en":"Ramppi 21102"},"coordinates":{"longitude":24.811301,"latitude":60.208135},"roadNumber":21101,"roadSection":21,"carriageway":"DUAL_CARRIAGEWAY_LEFT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Espoo","municipalityCode":49,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Turku","direction1MunicipalityCode":853,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20016"},{"tmsNumber":20017,"dataUpdatedTime":"2023-11-14T06:23:51+00:00","name":"vt1_Espoo_Espoonsilta","names":{"fi":"Ramppi 21102","sv":"Ramppi 21102","en":"Ramppi 21102"},"coordinates":{"longitude":24.803387,"latitude":60.208264},"roadNumber":1,"roadSection":4,"carriageway":"DUAL_CARRIAGEWAY_RIGHT_IN_INCREASING_DIRECTION","side":"RIGHT","municipality":"Espoo","municipalityCode":49,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Turku","direction1MunicipalityCode":853,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20017"},{"tmsNumber":20018,"dataUpdatedTime":"2024-03-20T10:50:20+00:00","name":"vt1_Espoo_Ruukinranta","names":{"fi":"Ramppi 21102","sv":"Ramppi 21102","en":"Ramppi 21102"},"coordinates":{"longitude":24.826427,"latitude":60.208922},"roadNumber":1,"roadSection":3,"carriageway":"DUAL_CARRIAGEWAY_RIGHT_IN_INCREASING_DIRECTION","side":"RIGHT","municipality":"Espoo","municipalityCode":49,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Turku","direction1MunicipalityCode":853,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20018"},{"tmsNumber":20021,"dataUpdatedTime":"2024-01-30T11:28:57+00:00","name":"vt3_Kotamäki_HML","names":{"fi":"LML010308","sv":"LML010308","en":"LML010308"},"coordinates":{"longitude":24.809478,"latitude":60.350625},"roadNumber":3,"roadSection":103,"carriageway":"DUAL_CARRIAGEWAY_RIGHT_IN_INCREASING_DIRECTION","side":"RIGHT","municipality":"Nurmijärvi","municipalityCode":543,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Hämeenlinna","direction1MunicipalityCode":109,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20021"},{"tmsNumber":20024,"dataUpdatedTime":"2023-05-09T08:08:00+00:00","name":"vt3_Mäyränkallio","names":{"fi":"LML010313","sv":"LML010313","en":"LML010313"},"coordinates":{"longitude":24.814737,"latitude":60.383362},"roadNumber":3,"roadSection":104,"carriageway":"DUAL_CARRIAGEWAY_LEFT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Nurmijärvi","municipalityCode":543,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Hämeenlinna","direction1MunicipalityCode":109,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20024"},{"tmsNumber":20025,"dataUpdatedTime":"2023-05-09T08:08:00+00:00","name":"vt3_Yli-Hemmi","names":{"fi":"LML010314","sv":"LML010314","en":"LML010314"},"coordinates":{"longitude":24.814253,"latitude":60.393297},"roadNumber":3,"roadSection":104,"carriageway":"DUAL_CARRIAGEWAY_LEFT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Nurmijärvi","municipalityCode":543,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Hämeenlinna","direction1MunicipalityCode":109,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20025"},{"tmsNumber":20026,"dataUpdatedTime":"2023-05-09T08:08:00+00:00","name":"vt3_Nurmijärvi_Hki","names":{"fi":"LML010315","sv":"LML010315","en":"LML010315"},"coordinates":{"longitude":24.844291,"latitude":60.451756},"roadNumber":3,"roadSection":104,"carriageway":"DUAL_CARRIAGEWAY_LEFT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Nurmijärvi","municipalityCode":543,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Hämeenlinna","direction1MunicipalityCode":109,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20026"},{"tmsNumber":20027,"dataUpdatedTime":"2024-03-20T10:50:05+00:00","name":"vt3_Peräjä_Hki","names":{"fi":"LML010309","sv":"LML010309","en":"LML010309"},"coordinates":{"longitude":24.808669,"latitude":60.353774},"roadNumber":3,"roadSection":103,"carriageway":"DUAL_CARRIAGEWAY_LEFT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Nurmijärvi","municipalityCode":543,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Hämeenlinna","direction1MunicipalityCode":109,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20027"},{"tmsNumber":20028,"dataUpdatedTime":"2023-05-09T08:08:00+00:00","name":"st170_Kulosaari_LML","names":{"fi":"Tie 170 Kulosaari","sv":"Väg 170 Brändö","en":"Road 170 Kulosaari"},"coordinates":{"longitude":24.992731,"latitude":60.185775},"roadNumber":170,"roadSection":1,"carriageway":"DUAL_CARRIAGEWAY_RIGHT_IN_INCREASING_DIRECTION","side"... (set the log level to DEBUG or TRACE to see the full content) 
- </msg>
-<msg time="2024-04-08T21:02:16.696925" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>/api/Stations</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-04-08T21:02:16.609500" elapsed="0.088378"/>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>200</arg>
-<arg>${response}</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2024-04-08T21:02:16.698874" elapsed="0.000000"/>
-</kw>
-<doc>GET /stations test on API</doc>
-<tag>Smoke</tag>
-<status status="PASS" start="2024-04-08T21:02:16.606145" elapsed="0.093731"/>
-</test>
-<status status="PASS" start="2024-04-08T21:02:15.970253" elapsed="0.731628"/>
+<status status="FAIL" start="2024-04-11T17:38:29.516739" elapsed="15.409183"/>
 </suite>
-<status status="PASS" start="2024-04-08T21:02:15.965838" elapsed="0.740233"/>
+<status status="FAIL" start="2024-04-11T17:38:29.514735" elapsed="15.414588"/>
 </suite>
-<status status="PASS" start="2024-04-08T21:02:15.962312" elapsed="0.746458"/>
+<status status="FAIL" start="2024-04-11T17:38:29.510735" elapsed="15.421587"/>
 </suite>
-<status status="PASS" start="2024-04-08T21:02:15.958805" elapsed="0.752381"/>
+<status status="FAIL" start="2024-04-11T17:38:29.507522" elapsed="15.426799"/>
 </suite>
-<status status="PASS" start="2024-04-08T21:02:15.928128" elapsed="0.784872"/>
+<status status="FAIL" start="2024-04-11T17:38:29.482187" elapsed="15.454134"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="4" fail="0" skip="0">Smoke</stat>
 </tag>
 <suite>
-<stat pass="4" fail="0" skip="0" id="s1" name="Testing-Tukko">Testing-Tukko</stat>
-<stat pass="4" fail="0" skip="0" id="s1-s1" name="Back-End">Testing-Tukko.Back-End</stat>
-<stat pass="4" fail="0" skip="0" id="s1-s1-s1" name="FEA000">Testing-Tukko.Back-End.FEA000</stat>
-<stat pass="4" fail="0" skip="0" id="s1-s1-s1-s1" name="FEA000-initial">Testing-Tukko.Back-End.FEA000.FEA000-initial</stat>
-<stat pass="4" fail="0" skip="0" id="s1-s1-s1-s1-s1" name="FEA000">Testing-Tukko.Back-End.FEA000.FEA000-initial.FEA000</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Testing-Tukko">Testing-Tukko</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Front-End">Testing-Tukko.Front-End</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="FEA109">Testing-Tukko.Front-End.FEA109</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="Test-Suit">Testing-Tukko.Front-End.FEA109.Test-Suit</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1-s1" name="FEA109">Testing-Tukko.Front-End.FEA109.Test-Suit.FEA109</stat>
 </suite>
 </statistics>
 <errors>
