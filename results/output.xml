@@ -1,304 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.5 on win32)" generated="2024-04-12T11:41:34.161868" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.11.5 on win32)" generated="2024-04-13T22:39:31.926426" rpa="false" schemaversion="5">
 <suite id="s1" name="Testing-Tukko" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko">
-<suite id="s1-s1" name="Front-End" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\front-end">
-<suite id="s1-s1-s1" name="FEA000" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\front-end\FEA000">
-<suite id="s1-s1-s1-s1" name="FEA000-initial" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\front-end\FEA000\FEA000-initial">
-<suite id="s1-s1-s1-s1-s1" name="FEA000" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\front-end\FEA000\FEA000-initial\FEA000.robot">
-<test id="s1-s1-s1-s1-s1-t1" name="TC000-000" line="6">
-<kw name="Open Home" owner="FEA000">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-12T11:41:34.585240" level="INFO">Opening browser 'Firefox' to base url 'http://128.214.255.43:5175'.</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-12T11:41:34.585240" elapsed="7.159722"/>
+<suite id="s1-s1" name="Back-End" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\back-end">
+<suite id="s1-s1-s1" name="FEA109" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\back-end\FEA109">
+<suite id="s1-s1-s1-s1" name="Test-Suit" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\back-end\FEA109\test-suit">
+<suite id="s1-s1-s1-s1-s1" name="FEA109" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\back-end\FEA109\test-suit\FEA109.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="TC109-003" line="6">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-04-13T22:39:32.302252" level="INFO">Creating Session using : alias=mysession, url=http://localhost:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${API_URL}</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-04-13T22:39:32.301251" elapsed="0.001001"/>
 </kw>
-<status status="PASS" start="2024-04-12T11:41:34.584241" elapsed="7.160721"/>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-04-13T22:39:36.391997" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221DD8E6750&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/Locations/search/?query=helsinki</msg>
+<msg time="2024-04-13T22:39:40.700738" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221DD651450&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/Locations/search/?query=helsinki</msg>
+<msg time="2024-04-13T22:39:45.167200" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221DD658210&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/Locations/search/?query=helsinki</msg>
+<msg time="2024-04-13T22:39:49.248031" level="FAIL">ConnectionError: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /api/Locations/search/?query=helsinki (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221DD658C50&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/api/Locations/search/</arg>
+<arg>params=query=helsinki</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2024-04-13T22:39:32.303250" elapsed="17.042566">ConnectionError: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /api/Locations/search/?query=helsinki (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221DD658C50&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</status>
 </kw>
-<kw name="Max Window" owner="FEA000">
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-04-12T11:41:41.747408" elapsed="0.468728"/>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="NOT RUN" start="2024-04-13T22:39:49.346908" elapsed="0.001139"/>
 </kw>
-<status status="PASS" start="2024-04-12T11:41:41.746070" elapsed="0.470066"/>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<var>${name}</var>
+<arg>${response.json()}[0]</arg>
+<arg>name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" start="2024-04-13T22:39:49.348047" elapsed="0.000000"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-12T11:41:42.218480" level="INFO">Clicking element 'css:.leaflet-control-zoom-in'.</msg>
-<arg>css:.leaflet-control-zoom-in</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-12T11:41:42.217136" elapsed="0.367883"/>
+<kw name="Get From List" owner="Collections">
+<var>${nameFromList}</var>
+<arg>${name}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="NOT RUN" start="2024-04-13T22:39:49.349053" elapsed="0.000000"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-12T11:41:42.586637" level="INFO">Clicking element 'css:.leaflet-control-zoom-out'.</msg>
-<arg>css:.leaflet-control-zoom-out</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-12T11:41:42.585550" elapsed="0.273865"/>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${nameFromList}</arg>
+<arg>Helsinki</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2024-04-13T22:39:49.349537" elapsed="0.000000"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-04-12T11:41:42.861413" elapsed="2.852587"/>
-</kw>
-<doc>Testing Zoom in and out elements</doc>
-<status status="PASS" start="2024-04-12T11:41:34.582240" elapsed="11.132760"/>
+<doc>Search bar test (back-end)</doc>
+<tag>Smoke</tag>
+<status status="FAIL" start="2024-04-13T22:39:32.300251" elapsed="17.049286">ConnectionError: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /api/Locations/search/?query=helsinki (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221DD658C50&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</status>
 </test>
-<test id="s1-s1-s1-s1-s1-t2" name="TC000-001" line="15">
-<kw name="Open Home" owner="FEA000">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-12T11:41:45.718001" level="INFO">Opening browser 'Firefox' to base url 'http://128.214.255.43:5175'.</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-12T11:41:45.718001" elapsed="5.965434"/>
-</kw>
-<status status="PASS" start="2024-04-12T11:41:45.716999" elapsed="5.966436"/>
-</kw>
-<kw name="Max Window" owner="FEA000">
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-04-12T11:41:51.685437" elapsed="0.265963"/>
-</kw>
-<status status="PASS" start="2024-04-12T11:41:51.684436" elapsed="0.266964"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-12T11:41:51.952901" level="INFO">Clicking element 'css:button[data-state="closed"]'.</msg>
-<arg>css:button[data-state="closed"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-12T11:41:51.952901" elapsed="0.275536"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-04-12T11:41:52.230433" level="INFO">Title should have 10 or more characters</msg>
-<arg>Title should have 10 or more characters</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-04-12T11:41:52.229441" elapsed="0.000992"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-12T11:41:52.232817" level="INFO">Typing text 'TestingTitle' into text field 'css:input[name="title"]'.</msg>
-<arg>css:input[name="title"]</arg>
-<arg>TestingTitle</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-12T11:41:52.232284" elapsed="0.068381"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-04-12T11:41:52.300665" level="INFO">Description should have 20 or more characters</msg>
-<arg>Description should have 20 or more characters</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-04-12T11:41:52.300665" elapsed="0.000000"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-12T11:41:52.303258" level="INFO">Typing text 'TestingDescriptionrandomtestgeneratedfortesting' into text field 'css:textarea[name="description"]'.</msg>
-<arg>css:textarea[name="description"]</arg>
-<arg>TestingDescriptionrandomtestgeneratedfortesting</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-12T11:41:52.302250" elapsed="0.077398"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-04-12T11:41:52.380665" level="INFO">Clicking button 'xpath://button[contains(text(), 'Submit')]'.</msg>
-<arg>xpath://button[contains(text(), 'Submit')]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-12T11:41:52.380665" elapsed="0.321450"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-04-12T11:41:52.703222" elapsed="2.805203"/>
-</kw>
-<doc>Feedback Button check</doc>
-<status status="PASS" start="2024-04-12T11:41:45.715998" elapsed="9.793423"/>
-</test>
-<test id="s1-s1-s1-s1-s1-t3" name="TC000-002" line="28">
-<kw name="Open Home" owner="FEA000">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-12T11:41:55.512773" level="INFO">Opening browser 'Firefox' to base url 'http://128.214.255.43:5175'.</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-12T11:41:55.512773" elapsed="5.714814"/>
-</kw>
-<status status="PASS" start="2024-04-12T11:41:55.511710" elapsed="5.716878"/>
-</kw>
-<kw name="Max Window" owner="FEA000">
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-04-12T11:42:01.229588" elapsed="0.270293"/>
-</kw>
-<status status="PASS" start="2024-04-12T11:42:01.228588" elapsed="0.271293"/>
-</kw>
-<kw name="Theme Change" owner="FEA000">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-12T11:42:01.501880" level="INFO">Clicking element 'xpath://button[@class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 w-10"]'.</msg>
-<arg>xpath://button[@class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 w-10"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-12T11:42:01.501880" elapsed="0.263484"/>
-</kw>
-<status status="PASS" start="2024-04-12T11:42:01.500880" elapsed="0.264484"/>
-</kw>
-<kw name="Wait Until Light Mode" owner="FEA000">
-<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
-<arg>css:body[class="dark"]</arg>
-<doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2024-04-12T11:42:01.766367" elapsed="0.002871"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>css:body[class=""]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-12T11:42:01.769238" elapsed="0.062699"/>
-</kw>
-<status status="PASS" start="2024-04-12T11:42:01.766367" elapsed="0.065570"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-04-12T11:42:02.019855" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-25.png"&gt;&lt;img src="selenium-screenshot-25.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-04-12T11:42:01.832935" elapsed="0.186920"/>
-</kw>
-<kw name="Theme Change" owner="FEA000">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-12T11:42:02.021856" level="INFO">Clicking element 'xpath://button[@class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 w-10"]'.</msg>
-<arg>xpath://button[@class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 w-10"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-12T11:42:02.021856" elapsed="0.306691"/>
-</kw>
-<status status="PASS" start="2024-04-12T11:42:02.020856" elapsed="0.307691"/>
-</kw>
-<kw name="Wait Until Dark Mode" owner="FEA000">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>css:body[class="dark"]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-12T11:42:02.329547" elapsed="0.010583"/>
-</kw>
-<status status="PASS" start="2024-04-12T11:42:02.328547" elapsed="0.011583"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-04-12T11:42:02.535467" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-26.png"&gt;&lt;img src="selenium-screenshot-26.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-04-12T11:42:02.341126" elapsed="0.194341"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-04-12T11:42:02.536468" elapsed="2.664235"/>
-</kw>
-<doc>Checking Theme button</doc>
-<status status="PASS" start="2024-04-12T11:41:55.511520" elapsed="9.690036"/>
-</test>
-<test id="s1-s1-s1-s1-s1-t4" name="TC000-003" line="41">
-<kw name="Open Home" owner="FEA000">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-12T11:42:05.204571" level="INFO">Opening browser 'Firefox' to base url 'http://128.214.255.43:5175'.</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-12T11:42:05.204571" elapsed="5.738999"/>
-</kw>
-<status status="PASS" start="2024-04-12T11:42:05.203568" elapsed="5.740002"/>
-</kw>
-<kw name="Max Window" owner="FEA000">
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-04-12T11:42:10.945566" elapsed="0.261328"/>
-</kw>
-<status status="PASS" start="2024-04-12T11:42:10.944565" elapsed="0.262329"/>
-</kw>
-<kw name="Language change" owner="FEA000">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-04-12T11:42:11.207895" level="INFO">Clicking button 'xpath://button[contains(text(), 'EN')]'.</msg>
-<arg>xpath://button[contains(text(), 'EN')]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-12T11:42:11.207895" elapsed="0.270719"/>
-</kw>
-<status status="PASS" start="2024-04-12T11:42:11.206894" elapsed="0.271720"/>
-</kw>
-<kw name="Wait Until Fi" owner="FEA000">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath://button[contains(text(), 'FI')]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-12T11:42:11.479621" elapsed="0.016106"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>css:input[placeholder="Etsi paikka"]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-12T11:42:11.495727" elapsed="0.013898"/>
-</kw>
-<status status="PASS" start="2024-04-12T11:42:11.479621" elapsed="0.030004"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-04-12T11:42:11.510624" elapsed="2.760432"/>
-</kw>
-<doc>Testing Language changes</doc>
-<status status="PASS" start="2024-04-12T11:42:05.202566" elapsed="9.068738"/>
-</test>
-<test id="s1-s1-s1-s1-s1-t5" name="TC000-005" line="58">
-<kw name="Open Home" owner="FEA000">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-12T11:42:14.275311" level="INFO">Opening browser 'Firefox' to base url 'http://128.214.255.43:5175'.</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-12T11:42:14.275311" elapsed="5.946448"/>
-</kw>
-<status status="PASS" start="2024-04-12T11:42:14.274310" elapsed="5.948451"/>
-</kw>
-<kw name="Max Window" owner="FEA000">
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-04-12T11:42:20.223869" elapsed="0.275828"/>
-</kw>
-<status status="PASS" start="2024-04-12T11:42:20.222761" elapsed="0.276936"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-12T11:42:20.507863" level="INFO">Clicking element 'css:div[title="Draw Rectangle"]'.</msg>
-<arg>css:div[title="Draw Rectangle"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-12T11:42:20.506614" elapsed="0.299774"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-12T11:42:20.807392" level="INFO">Clicking element 'css:div[title="Draw Polygons"]'.</msg>
-<arg>css:div[title="Draw Polygons"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-12T11:42:20.807392" elapsed="0.218511"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-12T11:42:21.025903" level="INFO">Clicking element 'css:div[title="Draw Circle"]'.</msg>
-<arg>css:div[title="Draw Circle"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-12T11:42:21.025903" elapsed="0.220528"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-12T11:42:21.247462" level="INFO">Clicking element 'css:div[title="Remove Layers"]'.</msg>
-<arg>css:div[title="Remove Layers"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-12T11:42:21.246431" elapsed="0.216071"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-04-12T11:42:21.463022" elapsed="2.786613"/>
-</kw>
-<doc>Testing Draw tool Buttons</doc>
-<status status="PASS" start="2024-04-12T11:42:14.273395" elapsed="9.978237"/>
-</test>
-<status status="PASS" start="2024-04-12T11:41:34.209384" elapsed="50.043536"/>
+<status status="FAIL" start="2024-04-13T22:39:31.964673" elapsed="17.386876"/>
 </suite>
-<status status="PASS" start="2024-04-12T11:41:34.205785" elapsed="50.049129"/>
+<status status="FAIL" start="2024-04-13T22:39:31.961650" elapsed="17.390893"/>
 </suite>
-<status status="PASS" start="2024-04-12T11:41:34.201787" elapsed="50.055175"/>
+<status status="FAIL" start="2024-04-13T22:39:31.958880" elapsed="17.395667"/>
 </suite>
-<status status="PASS" start="2024-04-12T11:41:34.198788" elapsed="50.060422"/>
+<status status="FAIL" start="2024-04-13T22:39:31.954880" elapsed="17.400667"/>
 </suite>
-<status status="PASS" start="2024-04-12T11:41:34.167784" elapsed="50.093598"/>
+<status status="FAIL" start="2024-04-13T22:39:31.930429" elapsed="17.427379"/>
 </suite>
 <statistics>
 <total>
-<stat pass="5" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="0" fail="1" skip="0">Smoke</stat>
 </tag>
 <suite>
-<stat pass="5" fail="0" skip="0" id="s1" name="Testing-Tukko">Testing-Tukko</stat>
-<stat pass="5" fail="0" skip="0" id="s1-s1" name="Front-End">Testing-Tukko.Front-End</stat>
-<stat pass="5" fail="0" skip="0" id="s1-s1-s1" name="FEA000">Testing-Tukko.Front-End.FEA000</stat>
-<stat pass="5" fail="0" skip="0" id="s1-s1-s1-s1" name="FEA000-initial">Testing-Tukko.Front-End.FEA000.FEA000-initial</stat>
-<stat pass="5" fail="0" skip="0" id="s1-s1-s1-s1-s1" name="FEA000">Testing-Tukko.Front-End.FEA000.FEA000-initial.FEA000</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Testing-Tukko">Testing-Tukko</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Back-End">Testing-Tukko.Back-End</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="FEA109">Testing-Tukko.Back-End.FEA109</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="Test-Suit">Testing-Tukko.Back-End.FEA109.Test-Suit</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1-s1" name="FEA109">Testing-Tukko.Back-End.FEA109.Test-Suit.FEA109</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2024-04-13T22:39:36.391997" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221DD8E6750&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/Locations/search/?query=helsinki</msg>
+<msg time="2024-04-13T22:39:40.700738" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221DD651450&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/Locations/search/?query=helsinki</msg>
+<msg time="2024-04-13T22:39:45.167200" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221DD658210&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/Locations/search/?query=helsinki</msg>
 </errors>
 </robot>
