@@ -1,6 +1,8 @@
 *** Settings ***
 Resource    ../resources/main.resource
 
+# This test suite contains test cases for Acceptance testing
+
 *** Test Cases ***
 AT001 - Testing markers front end
     [Documentation]    Testing whether the markers appear in front-end
