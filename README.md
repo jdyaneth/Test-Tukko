@@ -1,5 +1,12 @@
 # Testing Tukko
 
+**Created by**: Yaneth Gunawardena
+**Team**: TechTitans (Team 3)
+
+## Introduction
+
+This repository consists of Robot-Framework test suits used to test TUKKO V1.1 developed in Future factory project work, Spring 2024. 
+
 ## Directories
 
 ### Resources
