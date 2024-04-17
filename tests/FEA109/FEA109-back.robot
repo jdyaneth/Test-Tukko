@@ -6,8 +6,8 @@ Resource    ../resources/main.resource
 TC109-003 - Back-end Test for Search Feature
     [Documentation]    Search bar test (back-end). Response status and the response body values will be checked. 
     [tags]  Smoke
-    Create Session  mysession  ${API_URL}  verify=true
-    ${response}=  GET On Session  mysession  /api/Locations/search/  params=query=helsinki
+    Create Session  user_session  ${API_URL}  verify=true
+    ${response}=  GET On Session  user_session  /api/Locations/search/  params=query=helsinki
     Status Should Be  200  ${response}  #Check Status as 200
 
     #Check Title as Helsinki from Response Body

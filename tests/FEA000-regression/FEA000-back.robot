@@ -2,14 +2,14 @@
 Resource    ../resources/main.resource
 
 
-# These test cases test the initial Tukko's back-end
+# These test cases test the Tukko V1.1's back-end as a regression test. 
 
 *** Test Cases ***
 TC000-006 - GET stations/{id} test on API
     [Documentation]    GET stations/{id} test on API. Response status and the response body will be checked.
     [tags]  Smoke
-    Create Session  mysession  ${API_URL}  verify=true
-    ${response}=  GET On Session  mysession  /api/stations/24607
+    Create Session  user_session  ${API_URL}  verify=true
+    ${response}=  GET On Session  user_session  /api/stations/24607
     Status Should Be  200  ${response}  #Check Status as 200
 
     ${name}=  Get Value From Json  ${response.json()}  name
@@ -19,8 +19,8 @@ TC000-006 - GET stations/{id} test on API
 TC000-007 - GET /roadworks test on API
     [Documentation]    GET /roadworks test on API. Response status will be checked.
     [tags]  Smoke
-    Create Session  mysession  ${API_URL}  verify=true
-    ${response}=  GET On Session  mysession  /api/Roadworks        
+    Create Session  user_session  ${API_URL}  verify=true
+    ${response}=  GET On Session  user_session  /api/Roadworks        
     Status Should Be  200  ${response}  
 
     # Status	
@@ -32,8 +32,8 @@ TC000-007 - GET /roadworks test on API
 TC000-007.1 Test if reponse has mandatory fields
     [Documentation]    GET /roadworks test on API
     [tags]  Smoke
-    Create Session  mysession  ${API_URL}  verify=true
-    ${response}=  GET On Session  mysession  /api/Roadworks        
+    Create Session  user_session  ${API_URL}  verify=true
+    ${response}=  GET On Session  user_session  /api/Roadworks        
     Status Should Be  200  ${response}  
     ${start}=  Get Value From Json  ${response.json()}[0]  startTime
  
@@ -43,8 +43,8 @@ TC000-007.1 Test if reponse has mandatory fields
 TC000-008 - GET /sensors test on API
     [Documentation]    GET /sensors test on API. Response status will be checked.
     [tags]  Smoke
-    Create Session  mysession  ${API_URL}  verify=true
-    ${response}=  GET On Session  mysession  /api/Sensors    params=stationId=24607    
+    Create Session  user_session  ${API_URL}  verify=true
+    ${response}=  GET On Session  user_session  /api/Sensors    params=stationId=24607    
     Status Should Be  200  ${response}
 
     # Status	
@@ -57,8 +57,8 @@ TC000-008 - GET /sensors test on API
 TC000-009 - GET /stations test on API
     [Documentation]    GET /stations test on API. Response status will be checked.
     [tags]  Smoke
-    Create Session  mysession  ${API_URL}  verify=true
-    ${response}=  GET On Session  mysession  /api/Stations      
+    Create Session  user_session  ${API_URL}  verify=true
+    ${response}=  GET On Session  user_session  /api/Stations      
     Status Should Be  200  ${response}
 
     
