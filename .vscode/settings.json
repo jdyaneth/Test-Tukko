@@ -1,0 +1,3 @@
+{
+    "robot.variables": { "EXECDIR": "${workspaceFolder}" }
+  }

@@ -1,89 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.5 on win32)" generated="2024-04-13T22:39:31.926426" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.11.5 on win32)" generated="2024-04-17T17:12:20.698075" rpa="false" schemaversion="5">
 <suite id="s1" name="Testing-Tukko" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko">
-<suite id="s1-s1" name="Back-End" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\back-end">
-<suite id="s1-s1-s1" name="FEA109" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\back-end\FEA109">
-<suite id="s1-s1-s1-s1" name="Test-Suit" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\back-end\FEA109\test-suit">
-<suite id="s1-s1-s1-s1-s1" name="FEA109" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\back-end\FEA109\test-suit\FEA109.robot">
-<test id="s1-s1-s1-s1-s1-t1" name="TC109-003" line="6">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-04-13T22:39:32.302252" level="INFO">Creating Session using : alias=mysession, url=http://localhost:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
-<arg>mysession</arg>
-<arg>${API_URL}</arg>
-<arg>verify=true</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-04-13T22:39:32.301251" elapsed="0.001001"/>
+<suite id="s1-s1" name="Front-End" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\front-end">
+<suite id="s1-s1-s1" name="FEA000" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\front-end\FEA000">
+<suite id="s1-s1-s1-s1" name="FEA000-initial" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\front-end\FEA000\FEA000-initial">
+<suite id="s1-s1-s1-s1-s1" name="FEA000" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\front-end\FEA000\FEA000-initial\FEA000.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="TC000-000" line="6">
+<kw name="Open Home" owner="FEA000">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-17T17:12:21.055965" level="INFO">Opening browser 'Firefox' to base url 'http://128.214.255.43:5175'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-17T17:12:21.054962" elapsed="21.319234"/>
 </kw>
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-04-13T22:39:36.391997" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221DD8E6750&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/Locations/search/?query=helsinki</msg>
-<msg time="2024-04-13T22:39:40.700738" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221DD651450&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/Locations/search/?query=helsinki</msg>
-<msg time="2024-04-13T22:39:45.167200" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221DD658210&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/Locations/search/?query=helsinki</msg>
-<msg time="2024-04-13T22:39:49.248031" level="FAIL">ConnectionError: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /api/Locations/search/?query=helsinki (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221DD658C50&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>/api/Locations/search/</arg>
-<arg>params=query=helsinki</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="FAIL" start="2024-04-13T22:39:32.303250" elapsed="17.042566">ConnectionError: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /api/Locations/search/?query=helsinki (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221DD658C50&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</status>
+<status status="PASS" start="2024-04-17T17:12:21.053966" elapsed="21.320230"/>
 </kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>200</arg>
-<arg>${response}</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="NOT RUN" start="2024-04-13T22:39:49.346908" elapsed="0.001139"/>
+<kw name="Max Window" owner="FEA000">
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-17T17:12:42.376197" elapsed="0.350549"/>
 </kw>
-<kw name="Get Value From Json" owner="JSONLibrary">
-<var>${name}</var>
-<arg>${response.json()}[0]</arg>
-<arg>name</arg>
-<doc>Get Value From JSON using JSONPath</doc>
-<status status="NOT RUN" start="2024-04-13T22:39:49.348047" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-17T17:12:42.375197" elapsed="0.352562"/>
 </kw>
-<kw name="Get From List" owner="Collections">
-<var>${nameFromList}</var>
-<arg>${name}</arg>
-<arg>0</arg>
-<doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<status status="NOT RUN" start="2024-04-13T22:39:49.349053" elapsed="0.000000"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-17T17:12:42.729239" level="INFO">Clicking element 'css:.leaflet-control-zoom-in'.</msg>
+<arg>css:.leaflet-control-zoom-in</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-17T17:12:42.727759" elapsed="0.356873"/>
 </kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${nameFromList}</arg>
-<arg>Helsinki</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2024-04-13T22:39:49.349537" elapsed="0.000000"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-17T17:12:43.085628" level="INFO">Clicking element 'css:.leaflet-control-zoom-out'.</msg>
+<arg>css:.leaflet-control-zoom-out</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-17T17:12:43.085628" elapsed="0.225216"/>
 </kw>
-<doc>Search bar test (back-end)</doc>
-<tag>Smoke</tag>
-<status status="FAIL" start="2024-04-13T22:39:32.300251" elapsed="17.049286">ConnectionError: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /api/Locations/search/?query=helsinki (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221DD658C50&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</status>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-17T17:12:43.312844" elapsed="4.925836"/>
+</kw>
+<doc>Testing Zoom in and out elements</doc>
+<status status="PASS" start="2024-04-17T17:12:21.052965" elapsed="27.186762"/>
 </test>
-<status status="FAIL" start="2024-04-13T22:39:31.964673" elapsed="17.386876"/>
+<status status="PASS" start="2024-04-17T17:12:20.741100" elapsed="27.500193"/>
 </suite>
-<status status="FAIL" start="2024-04-13T22:39:31.961650" elapsed="17.390893"/>
+<status status="PASS" start="2024-04-17T17:12:20.738101" elapsed="27.505912"/>
 </suite>
-<status status="FAIL" start="2024-04-13T22:39:31.958880" elapsed="17.395667"/>
+<status status="PASS" start="2024-04-17T17:12:20.735101" elapsed="27.510517"/>
 </suite>
-<status status="FAIL" start="2024-04-13T22:39:31.954880" elapsed="17.400667"/>
+<status status="PASS" start="2024-04-17T17:12:20.731083" elapsed="27.516541"/>
 </suite>
-<status status="FAIL" start="2024-04-13T22:39:31.930429" elapsed="17.427379"/>
+<status status="PASS" start="2024-04-17T17:12:20.704086" elapsed="27.545892"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">Smoke</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Testing-Tukko">Testing-Tukko</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1" name="Back-End">Testing-Tukko.Back-End</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="FEA109">Testing-Tukko.Back-End.FEA109</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="Test-Suit">Testing-Tukko.Back-End.FEA109.Test-Suit</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1-s1" name="FEA109">Testing-Tukko.Back-End.FEA109.Test-Suit.FEA109</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Testing-Tukko">Testing-Tukko</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Front-End">Testing-Tukko.Front-End</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="FEA000">Testing-Tukko.Front-End.FEA000</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="FEA000-initial">Testing-Tukko.Front-End.FEA000.FEA000-initial</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1-s1" name="FEA000">Testing-Tukko.Front-End.FEA000.FEA000-initial.FEA000</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-04-13T22:39:36.391997" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221DD8E6750&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/Locations/search/?query=helsinki</msg>
-<msg time="2024-04-13T22:39:40.700738" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221DD651450&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/Locations/search/?query=helsinki</msg>
-<msg time="2024-04-13T22:39:45.167200" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221DD658210&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/Locations/search/?query=helsinki</msg>
 </errors>
 </robot>
