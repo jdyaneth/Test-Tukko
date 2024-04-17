@@ -43,5 +43,9 @@ AT003 - Real-Time /stations/{id}/history test on API
     Log    History data is shown Real-Time!
 
 
-
-
+AT004 - Map tiles are visible
+    [Documentation]    Testing whether the map is visible in front-end
+    Open Home
+    Max Window
+    Wait Until Element Is Visible    xpath=//img[@src="https://a.tile.openstreetmap.org/12/2331/1185.png"]
+    [Teardown]    Close Browser
