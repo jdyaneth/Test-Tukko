@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    FEA000.resource
+Resource    ../resources/main.resource
 
 
 # These test cases test the initial Tukko's back-end

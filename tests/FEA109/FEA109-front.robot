@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    FEA109.resource
+Resource    ../resources/main.resource
 
 
 *** Test Cases ***
