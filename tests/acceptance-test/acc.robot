@@ -26,7 +26,7 @@ AT002 - GET /stations test on API
 
 
 AT003 - Real-Time /stations/{id}/history test on API
-    [Documentation]    GET /stations/{id}/history test on API. Response status will be checked.
+    [Documentation]    GET /stations/{id}/history test on API. Response status will be checked. Date of the retrieved data will be checked. 
     [tags]  Smoke
     Create Session  user_session  ${API_URL}  verify=true
     ${response}=  GET On Session  user_session  /api/Stations/24607/history    params=timeRange=Today      
