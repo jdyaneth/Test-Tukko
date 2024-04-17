@@ -3,7 +3,7 @@ Resource    ../resources/main.resource
 
 
 *** Test Cases ***
-TC109-001
+TC109-001 - User can search for specific place
     [Documentation]    Search bar check (Front-end)
     Open Home
     Max Window

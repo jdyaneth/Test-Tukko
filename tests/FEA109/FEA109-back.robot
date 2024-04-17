@@ -3,8 +3,8 @@ Resource    ../resources/main.resource
 
 
 *** Test Cases ***
-TC109-003
-    [Documentation]    Search bar test (back-end)
+TC109-003 - Back-end Test for Search Feature
+    [Documentation]    Search bar test (back-end). Response status and the response body values will be checked. 
     [tags]  Smoke
     Create Session  mysession  ${API_URL}  verify=true
     ${response}=  GET On Session  mysession  /api/Locations/search/  params=query=helsinki

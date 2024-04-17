@@ -5,8 +5,8 @@ Resource    ../resources/main.resource
 # These test cases test the initial Tukko's back-end
 
 *** Test Cases ***
-TC000-006
-    [Documentation]    GET stations/{id} test on API
+TC000-006 - GET stations/{id} test on API
+    [Documentation]    GET stations/{id} test on API. Response status and the response body will be checked.
     [tags]  Smoke
     Create Session  mysession  ${API_URL}  verify=true
     ${response}=  GET On Session  mysession  /api/stations/24607
@@ -16,8 +16,8 @@ TC000-006
     ${nameFromList}=  Get From List   ${name}  0
     Should be equal  ${nameFromList}  vt1_Karnainen
 
-TC000-007 Test if call is 200
-    [Documentation]    GET /roadworks test on API
+TC000-007 - GET /roadworks test on API
+    [Documentation]    GET /roadworks test on API. Response status will be checked.
     [tags]  Smoke
     Create Session  mysession  ${API_URL}  verify=true
     ${response}=  GET On Session  mysession  /api/Roadworks        
@@ -40,8 +40,8 @@ TC000-007.1 Test if reponse has mandatory fields
     
 
 
-TC000-008
-    [Documentation]    GET /sensors test on API
+TC000-008 - GET /sensors test on API
+    [Documentation]    GET /sensors test on API. Response status will be checked.
     [tags]  Smoke
     Create Session  mysession  ${API_URL}  verify=true
     ${response}=  GET On Session  mysession  /api/Sensors    params=stationId=24607    
@@ -54,8 +54,8 @@ TC000-008
     # 500: Internal server error.
 
 
-TC000-009
-    [Documentation]    GET /stations test on API
+TC000-009 - GET /stations test on API
+    [Documentation]    GET /stations test on API. Response status will be checked.
     [tags]  Smoke
     Create Session  mysession  ${API_URL}  verify=true
     ${response}=  GET On Session  mysession  /api/Stations      

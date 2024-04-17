@@ -3,8 +3,8 @@ Resource    ../resources/main.resource
 Resource    ../resources/FEA000.resource
 
 *** Test Cases ***
-TC000-000
-    [Documentation]    Testing Zoom in and out elements
+TC000-000 - Testing Zoom in and out elements
+    [Documentation]    Zoom in and out elements will be tested.
     Open Home
     Max Window
     Click Element    css:.leaflet-control-zoom-in
@@ -12,8 +12,8 @@ TC000-000
     [Teardown]    Close Browser
 
 
-TC000-001
-    [Documentation]    Feedback Button check
+TC000-001 - Feedback Button check
+    [Documentation]    Feedback Button will be tested and the test will fill the feedback form and test-submit it.
     Open Home
     Max Window
     Click Element    css:button[data-state="closed"]
@@ -25,8 +25,8 @@ TC000-001
     [Teardown]    Close Browser
 
 
-TC000-002
-    [Documentation]    Checking Theme button
+TC000-002 - Checking Theme button
+    [Documentation]    Theme change button will be tested and the corresponding theme will be checked.
     Open Home
     Max Window
     Theme Change
@@ -38,8 +38,8 @@ TC000-002
     [Teardown]    Close Browser
 
 
-TC000-003
-    [Documentation]    Testing Language changes
+TC000-003 - Testing Language changes
+    [Documentation]    Language toggle element will be tested and the corresponding language will be checked. 
     Open Home
     Max Window
     Language change
@@ -55,8 +55,8 @@ TC000-003
 #     Click IoTitude Logo
 #     [Teardown]    Close Browser
 
-TC000-005
-    [Documentation]    Testing Draw tool Buttons
+TC000-005 - Testing Draw tool Buttons
+    [Documentation]    Draw tool Buttons will be tested.
     Open Home
     Max Window
     Click Element    css:div[title="Draw Rectangle"]
