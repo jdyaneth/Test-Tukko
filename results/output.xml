@@ -1,79 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.5 on win32)" generated="2024-04-17T17:42:47.658475" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.11.5 on win32)" generated="2024-04-17T20:08:52.108094" rpa="false" schemaversion="5">
 <suite id="s1" name="Testing-Tukko" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko">
 <suite id="s1-s1" name="Tests" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\tests">
-<suite id="s1-s1-s1" name="FEA000-regression" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\tests\FEA000-regression">
-<suite id="s1-s1-s1-s1" name="FEA000-front" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\tests\FEA000-regression\FEA000-front.robot">
-<test id="s1-s1-s1-s1-t1" name="TC000-001" line="15">
+<suite id="s1-s1-s1" name="FEA109" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\tests\FEA109">
+<suite id="s1-s1-s1-s1" name="FEA109-front" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\tests\FEA109\FEA109-front.robot">
+<test id="s1-s1-s1-s1-t1" name="TC109-001 - User can search for specific place" line="6">
 <kw name="Open Home" owner="main">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-17T17:42:48.071813" level="INFO">Opening browser 'Firefox' to base url 'http://128.214.255.43:5175'.</msg>
+<msg time="2024-04-17T20:08:52.477410" level="INFO">Opening browser 'Firefox' to base url 'http://128.214.255.43:5175'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-17T17:42:48.070802" elapsed="6.396015"/>
+<status status="PASS" start="2024-04-17T20:08:52.476410" elapsed="5.784035"/>
 </kw>
-<status status="PASS" start="2024-04-17T17:42:48.069293" elapsed="6.397524"/>
+<status status="PASS" start="2024-04-17T20:08:52.475408" elapsed="5.786034"/>
 </kw>
 <kw name="Max Window" owner="main">
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-04-17T17:42:54.468877" elapsed="0.264096"/>
+<status status="PASS" start="2024-04-17T20:08:58.262632" elapsed="0.377161"/>
 </kw>
-<status status="PASS" start="2024-04-17T17:42:54.467868" elapsed="0.265105"/>
+<status status="PASS" start="2024-04-17T20:08:58.261442" elapsed="0.379350"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-17T20:08:58.643800" level="INFO">Typing text 'turku' into text field 'css:input[name="query"]'.</msg>
+<arg>css:input[name="query"]</arg>
+<arg>turku</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-17T20:08:58.642799" elapsed="0.170662"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-17T17:42:54.733992" level="INFO">Clicking element 'css:button[data-state="closed"]'.</msg>
-<arg>css:button[data-state="closed"]</arg>
+<msg time="2024-04-17T20:08:58.813461" level="INFO">Clicking element 'xpath=//button[@class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline h-10 w-10 shrink-0"]'.</msg>
+<arg>xpath=//button[@class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline h-10 w-10 shrink-0"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-17T17:42:54.732973" elapsed="0.329921"/>
+<status status="PASS" start="2024-04-17T20:08:58.813461" elapsed="0.245073"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Turku, Turun seutukunta, Varsinais-Suomi, Lounais-Suomen aluehallintovirasto, Manner-Suomi, Suomi / Finland</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-04-17T20:08:59.059940" elapsed="0.209550"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-04-17T17:42:55.064931" level="INFO">Title should have 10 or more characters</msg>
-<arg>Title should have 10 or more characters</arg>
+<msg time="2024-04-17T20:08:59.270491" level="INFO">The Search result has appeared</msg>
+<arg>The Search result has appeared</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-04-17T17:42:55.063917" elapsed="0.001014"/>
+<status status="PASS" start="2024-04-17T20:08:59.270491" elapsed="0.000000"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-17T17:42:55.067935" level="INFO">Typing text 'TestingTitle' into text field 'css:input[name="title"]'.</msg>
-<arg>css:input[name="title"]</arg>
-<arg>TestingTitle</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-17T17:42:55.066938" elapsed="0.056056"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-17T20:08:59.272488" level="INFO">Clicking element 'xpath=//div[@class="p-5 border-b last:border-0 hover:bg-muted hover:cursor-pointer"]'.</msg>
+<arg>xpath=//div[@class="p-5 border-b last:border-0 hover:bg-muted hover:cursor-pointer"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-17T20:08:59.271491" elapsed="0.303174"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//img[@src="https://b.tile.openstreetmap.org/14/9205/4716.png"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-17T20:08:59.574665" elapsed="0.119991"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-04-17T17:42:55.124044" level="INFO">Description should have 20 or more characters</msg>
-<arg>Description should have 20 or more characters</arg>
+<msg time="2024-04-17T20:08:59.696662" level="INFO">Location: (60.45721779774396, 22.236328125) will be visible on the map. (True Location: Pitkämäki, Turku)</msg>
+<arg>Location: (60.45721779774396, 22.236328125) will be visible on the map. (True Location: Pitkämäki, Turku)</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-04-17T17:42:55.122994" elapsed="0.001050"/>
+<status status="PASS" start="2024-04-17T20:08:59.695661" elapsed="0.001001"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-17T17:42:55.125994" level="INFO">Typing text 'TestingDescriptionrandomtestgeneratedfortesting' into text field 'css:textarea[name="description"]'.</msg>
-<arg>css:textarea[name="description"]</arg>
-<arg>TestingDescriptionrandomtestgeneratedfortesting</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-17T17:42:55.124993" elapsed="0.061509"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-04-17T17:42:55.187505" level="INFO">Clicking button 'xpath://button[contains(text(), 'Submit')]'.</msg>
-<arg>xpath://button[contains(text(), 'Submit')]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-17T17:42:55.187505" elapsed="0.307463"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-17T20:08:59.697655" level="INFO">Clicking element '//button[text()="Close"]'.</msg>
+<arg>//button[text()="Close"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-17T20:08:59.697655" elapsed="0.266432"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-04-17T17:42:55.495969" elapsed="4.834901"/>
+<status status="PASS" start="2024-04-17T20:08:59.965085" elapsed="2.843032"/>
 </kw>
-<doc>Feedback Button check</doc>
-<status status="PASS" start="2024-04-17T17:42:48.069293" elapsed="12.262576"/>
+<doc>Search bar check (Front-end)</doc>
+<status status="PASS" start="2024-04-17T20:08:52.473411" elapsed="10.335804"/>
 </test>
-<status status="PASS" start="2024-04-17T17:42:47.734299" elapsed="12.599585"/>
+<status status="PASS" start="2024-04-17T20:08:52.148187" elapsed="10.662930"/>
 </suite>
-<status status="PASS" start="2024-04-17T17:42:47.730298" elapsed="12.605568"/>
+<status status="PASS" start="2024-04-17T20:08:52.144191" elapsed="10.668927"/>
 </suite>
-<status status="PASS" start="2024-04-17T17:42:47.725292" elapsed="12.612576"/>
+<status status="PASS" start="2024-04-17T20:08:52.141191" elapsed="10.673926"/>
 </suite>
-<status status="PASS" start="2024-04-17T17:42:47.665479" elapsed="12.673408"/>
+<status status="PASS" start="2024-04-17T20:08:52.113084" elapsed="10.705036"/>
 </suite>
 <statistics>
 <total>
@@ -84,8 +93,8 @@
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="Testing-Tukko">Testing-Tukko</stat>
 <stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">Testing-Tukko.Tests</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="FEA000-regression">Testing-Tukko.Tests.FEA000-regression</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="FEA000-front">Testing-Tukko.Tests.FEA000-regression.FEA000-front</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="FEA109">Testing-Tukko.Tests.FEA109</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="FEA109-front">Testing-Tukko.Tests.FEA109.FEA109-front</stat>
 </suite>
 </statistics>
 <errors>
