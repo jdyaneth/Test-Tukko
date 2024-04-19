@@ -1,6 +1,6 @@
 *** Settings ***
-Resource    ../resources/main.resource
-Resource    ../resources/FEA000.resource
+Resource    ../../resources/main.resource
+Resource    ../../resources/FEA000.resource
 
 *** Test Cases ***
 TC000-000 - Testing Zoom in and out elements

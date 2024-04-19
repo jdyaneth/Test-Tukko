@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    ../resources/main.resource
+Resource    ../../resources/main.resource
 
 # This test suite contains test cases for Acceptance testing
 

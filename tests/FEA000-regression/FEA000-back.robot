@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    ../resources/main.resource
+Resource    ../../resources/main.resource
 
 
 # These test cases test the Tukko V1.1's back-end as a regression test. 
