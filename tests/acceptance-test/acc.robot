@@ -50,4 +50,3 @@ AT004 - Map tiles are visible
     Wait Until Element Is Visible    xpath=//img[@src="https://a.tile.openstreetmap.org/12/2331/1185.png"]
     [Teardown]    Close Browser
 
-## test 

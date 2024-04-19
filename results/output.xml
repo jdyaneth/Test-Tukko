@@ -1,109 +1,212 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.5 on win32)" generated="2024-04-18T10:47:31.399292" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.11.5 on win32)" generated="2024-04-19T11:20:56.800397" rpa="false" schemaversion="5">
 <suite id="s1" name="Testing-Tukko" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko">
 <suite id="s1-s1" name="Tests" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\tests">
 <suite id="s1-s1-s1" name="Acceptance-Test" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\tests\acceptance-test">
 <suite id="s1-s1-s1-s1" name="Acc" source="D:\Courses\2024 S\Future Factory\Test-Repo\testing-tukko\tests\acceptance-test\acc.robot">
-<test id="s1-s1-s1-s1-t1" name="AT003 - Real-Time /stations/{id}/history test on API" line="30">
+<test id="s1-s1-s1-s1-t1" name="AT001 - Testing markers front end" line="7">
+<kw name="Open Home" owner="main">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-19T11:20:57.575447" level="INFO">Opening browser 'Firefox' to base url 'http://128.214.255.43:5175'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-19T11:20:57.574456" elapsed="7.253412"/>
+</kw>
+<status status="PASS" start="2024-04-19T11:20:57.573470" elapsed="7.255396"/>
+</kw>
+<kw name="Max Window" owner="main">
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-19T11:21:04.829866" elapsed="0.335453"/>
+</kw>
+<status status="PASS" start="2024-04-19T11:21:04.828866" elapsed="0.337452"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=div.leaflet-marker-icon.customMarker.leaflet-zoom-animated.leaflet-interactive</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-19T11:21:05.176318" elapsed="0.725787"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-04-19T11:21:05.903547" level="INFO">Markers appear as usual</msg>
+<arg>Markers appear as usual</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-04-19T11:21:05.903547" elapsed="0.001012"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-19T11:21:05.909554" elapsed="2.939891"/>
+</kw>
+<doc>Testing whether the markers appear in front-end</doc>
+<status status="PASS" start="2024-04-19T11:20:57.571549" elapsed="11.279300"/>
+</test>
+<test id="s1-s1-s1-s1-t2" name="AT002 - GET /stations test on API" line="16">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-04-18T10:47:31.808228" level="INFO">Creating Session using : alias=user_session, url=http://128.214.255.43:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<msg time="2024-04-19T11:21:08.853850" level="INFO">Creating Session using : alias=user_session, url=http://128.214.255.43:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
 <arg>user_session</arg>
 <arg>${API_URL}</arg>
 <arg>verify=true</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-04-18T10:47:31.807228" elapsed="0.001000"/>
+<status status="PASS" start="2024-04-19T11:21:08.852857" elapsed="0.001989"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-04-18T10:47:31.962785" level="INFO">GET Request : url=http://128.214.255.43:8080/api/Stations/24607/history?timeRange=Today 
- path_url=/api/Stations/24607/history?timeRange=Today 
+<msg time="2024-04-19T11:21:08.973464" level="INFO">GET Request : url=http://128.214.255.43:8080/api/Stations 
+ path_url=/api/Stations 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2024-04-18T10:47:31.963882" level="INFO">GET Response : url=http://128.214.255.43:8080/api/Stations/24607/history?timeRange=Today 
+<msg time="2024-04-19T11:21:08.974459" level="INFO">GET Response : url=http://128.214.255.43:8080/api/Stations 
  status=200, reason=OK 
- headers={'Content-Type': 'application/json; charset=utf-8', 'Date': 'Thu, 18 Apr 2024 07:47:32 GMT', 'Server': 'Kestrel', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'Vary': 'Accept-Encoding'} 
- body={"stationId":"24607","tmsNumber":1607,"dataUpdatedTime":"2024-03-13T12:50:05Z","name":"vt1_Karnainen","coordinates":{"longitude":24.079464,"latitude":60.289063},"sensors":[{"sensorId":"5054","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-17T23:00:00Z","timeWindowEnd":"2024-04-18T00:00:00Z","measuredTime":"2024-04-18T00:43:40Z","unit":"kpl/h","value":37,"id":"66206dac78147274c0879c56"},{"sensorId":"5055","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-17T23:00:00Z","timeWindowEnd":"2024-04-18T00:00:00Z","measuredTime":"2024-04-18T00:43:40Z","unit":"kpl/h","value":21,"id":"66206dac78147274c0879c57"},{"sensorId":"5056","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-17T23:00:00Z","timeWindowEnd":"2024-04-18T00:00:00Z","measuredTime":"2024-04-18T00:43:40Z","unit":"km/h","value":95,"id":"66206dac78147274c0879c58"},{"sensorId":"5057","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-17T23:00:00Z","timeWindowEnd":"2024-04-18T00:00:00Z","measuredTime":"2024-04-18T00:43:40Z","unit":"km/h","value":98,"id":"66206dac78147274c0879c59"},{"sensorId":"5067","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1_MS1","timeWindowStart":"2024-04-17T23:00:00Z","timeWindowEnd":"2024-04-18T00:00:00Z","measuredTime":"2024-04-18T00:43:40Z","unit":"***","value":1,"id":"66206dac78147274c0879c5a"},{"sensorId":"5071","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2_MS2","timeWindowStart":"2024-04-17T23:00:00Z","timeWindowEnd":"2024-04-18T00:00:00Z","measuredTime":"2024-04-18T00:43:40Z","unit":"***","value":1,"id":"66206dac78147274c0879c5b"},{"sensorId":"5054","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-18T00:00:00Z","timeWindowEnd":"2024-04-18T01:00:00Z","measuredTime":"2024-04-18T01:43:05Z","unit":"kpl/h","value":22,"id":"66207bbd78147274c087a7cb"},{"sensorId":"5055","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-18T00:00:00Z","timeWindowEnd":"2024-04-18T01:00:00Z","measuredTime":"2024-04-18T01:43:05Z","unit":"kpl/h","value":50,"id":"66207bbd78147274c087a7cc"},{"sensorId":"5056","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-18T00:00:00Z","timeWindowEnd":"2024-04-18T01:00:00Z","measuredTime":"2024-04-18T01:43:05Z","unit":"km/h","value":99,"id":"66207bbd78147274c087a7cd"},{"sensorId":"5057","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-18T00:00:00Z","timeWindowEnd":"2024-04-18T01:00:00Z","measuredTime":"2024-04-18T01:43:05Z","unit":"km/h","value":104,"id":"66207bbd78147274c087a7ce"},{"sensorId":"5067","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1_MS1","timeWindowStart":"2024-04-18T00:00:00Z","timeWindowEnd":"2024-04-18T01:00:00Z","measuredTime":"2024-04-18T01:43:05Z","unit":"***","value":1,"id":"66207bbd78147274c087a7cf"},{"sensorId":"5071","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2_MS2","timeWindowStart":"2024-04-18T00:00:00Z","timeWindowEnd":"2024-04-18T01:00:00Z","measuredTime":"2024-04-18T01:43:05Z","unit":"***","value":2,"id":"66207bbd78147274c087a7d0"},{"sensorId":"5054","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-18T01:00:00Z","timeWindowEnd":"2024-04-18T02:00:00Z","measuredTime":"2024-04-18T02:43:01Z","unit":"kpl/h","value":25,"id":"662089cd78147274c087b33d"},{"sensorId":"5055","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-18T01:00:00Z","timeWindowEnd":"2024-04-18T02:00:00Z","measuredTime":"2024-04-18T02:43:01Z","unit":"kpl/h","value":80,"id":"662089cd78147274c087b33e"},{"sensorId":"5056","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-18T01:00:00Z","timeWindowEnd":"2024-04-18T02:00:00Z","measuredTime":"2024-04-18T02:43:01Z","unit":"km/h","value":101,"id":"662089cd78147274c087b33f"},{"sensorId":"5057","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-18T01:00:00Z","timeWindowEnd":"2024-04-18T02:00:00Z","measuredTime":"2024-04-18T02:43:01Z","unit":"km/h","value":106,"id":"662089cd78147274c087b340"},{"sensorId":"5067","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1_MS1","timeWindowStart":"2024-04-18T01:00:00Z","timeWindowEnd":"2024-04-18T02:00:00Z","measuredTime":"2024-04-18T02:43:01Z","unit":"***","value":1,"id":"662089cd78147274c087b341"},{"sensorId":"5071","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2_MS2","timeWindowStart":"2024-04-18T01:00:00Z","timeWindowEnd":"2024-04-18T02:00:00Z","measuredTime":"2024-04-18T02:43:01Z","unit":"***","value":3,"id":"662089cd78147274c087b342"},{"sensorId":"5054","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-18T02:00:00Z","timeWindowEnd":"2024-04-18T03:00:00Z","measuredTime":"2024-04-18T03:43:07Z","unit":"kpl/h","value":86,"id":"662097de78147274c087beaf"},{"sensorId":"5055","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-18T02:00:00Z","timeWindowEnd":"2024-04-18T03:00:00Z","measuredTime":"2024-04-18T03:43:07Z","unit":"kpl/h","value":206,"id":"662097de78147274c087beb0"},{"sensorId":"5056","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-18T02:00:00Z","timeWindowEnd":"2024-04-18T03:00:00Z","measuredTime":"2024-04-18T03:43:07Z","unit":"km/h","value":103,"id":"662097de78147274c087beb1"},{"sensorId":"5057","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-18T02:00:00Z","timeWindowEnd":"2024-04-18T03:00:00Z","measuredTime":"2024-04-18T03:43:07Z","unit":"km/h","value":108,"id":"662097de78147274c087beb2"},{"sensorId":"5067","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1_MS1","timeWindowStart":"2024-04-18T02:00:00Z","timeWindowEnd":"2024-04-18T03:00:00Z","measuredTime":"2024-04-18T03:43:07Z","unit":"***","value":3,"id":"662097de78147274c087beb3"},{"sensorId":"5071","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2_MS2","timeWindowStart":"2024-04-18T02:00:00Z","timeWindowEnd":"2024-04-18T03:00:00Z","measuredTime":"2024-04-18T03:43:07Z","unit":"***","value":7,"id":"662097de78147274c087beb4"},{"sensorId":"5054","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-18T03:00:00Z","timeWindowEnd":"2024-04-18T04:00:00Z","measuredTime":"2024-04-18T04:43:08Z","unit":"kpl/h","value":219,"id":"6620a5ed78147274c087ca21"},{"sensorId":"5055","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-18T03:00:00Z","timeWindowEnd":"2024-04-18T04:00:00Z","measuredTime":"2024-04-18T04:43:08Z","unit":"kpl/h","value":501,"id":"6620a5ed78147274c087ca22"},{"sensorId":"5056","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-18T03:00:00Z","timeWindowEnd":"2024-04-18T04:00:00Z","measuredTime":"2024-04-18T04:43:08Z","unit":"km/h","value":109,"id":"6620a5ed78147274c087ca23"},{"sensorId":"5057","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-18T03:00:00Z","timeWindowEnd":"2024-04-18T04:00:00Z","measuredTime":"2024-04-18T04:43:08Z","unit":"km/h","value":109,"id":"6620a5ed78147274c087ca24"},{"sensorId":"5067","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1_MS1","timeWindowStart":"2024-04-18T03:00:00Z","timeWindowEnd":"2024-04-18T04:00:00Z","measuredTime":"2024-04-18T04:43:08Z","unit":"***","value":8,"id":"6620a5ed78147274c087ca25"},{"sensorId":"5071","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2_MS2","timeWindowStart":"2024-04-18T03:00:00Z","timeWindowEnd":"2024-04-18T04:00:00Z","measuredTime":"2024-04-18T04:43:08Z","unit":"***","value":18,"id":"6620a5ed78147274c087ca26"},{"sensorId":"5054","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-18T04:00:00Z","timeWindowEnd":"2024-04-18T05:00:00Z","measuredTime":"2024-04-18T05:43:07Z","unit":"kpl/h","value":383,"id":"6620b3fd78147274c087d593"},{"sensorId":"5055","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-18T04:00:00Z","timeWindowEnd":"2024-04-18T05:00:00Z","measuredTime":"2024-04-18T05:43:07Z","unit":"kpl/h","value":713,"id":"6620b3fd78147274c087d594"},{"sensorId":"5056","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-18T04:00:00Z","timeWindowEnd":"2024-04-18T05:00:00Z","measuredTime":"2024-04-18T05:43:07Z","unit":"km/h","value":109,"id":"6620b3fd78147274c087d595"},{"sensorId":"5057","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-18T04:00:00Z","timeWindowEnd":"2024-04-18T05:00:00Z","measuredTime":"2024-04-18T05:43:07Z","unit":"km/h","value":111,"id":"6620b3fd78147274c087d596"},{"sensorId":"5067","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1_MS1","timeWindowStart":"2024-04-18T04:00:00Z","timeWindowEnd":"2024-04-18T05:00:00Z","measuredTime":"2024-04-18T05:43:07Z","unit":"***","value":14,"id":"6620b3fd78147274c087d597"},{"sensorId":"5071","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2_MS2","timeWindowStart":"2024-04-18T04:00:00Z","timeWindowEnd":"2024-04-18T05:00:00Z","measuredTime":"2024-04-18T05:43:07Z","unit":"***","value":25,"id":"6620b3fd78147274c087d598"},{"sensorId":"5054","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-18T05:00:00Z","timeWindowEnd":"2024-04-18T06:00:00Z","measuredTime":"2024-04-18T06:43:01Z","unit":"kpl/h","value":509,"id":"6620c20d78147274c087e105"},{"sensorId":"5055","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-18T05:00:00Z","timeWindowEnd":"2024-04-18T06:00:00Z","measuredTime":"2024-04-18T06:43:01Z","unit":"kpl/h","value":653,"id":"6620c20d78147274c087e106"},{"sensorId":"5056",... (set the log level to DEBUG or TRACE to see the full content) 
+ headers={'Content-Type': 'application/json; charset=utf-8', 'Date': 'Fri, 19 Apr 2024 08:21:08 GMT', 'Server': 'Kestrel', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'Vary': 'Accept-Encoding'} 
+ body=[{"tmsNumber":20005,"dataUpdatedTime":"2024-01-30T11:27:56+00:00","name":"vt1_Espoo_Sepänkylä_LML","names":{"fi":"LML014214","sv":"LML014214","en":"LML014214"},"coordinates":{"longitude":24.729261,"latitude":60.200952},"roadNumber":1,"roadSection":5,"carriageway":"DUAL_CARRIAGEWAY_LEFT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Espoo","municipalityCode":49,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Turku","direction1MunicipalityCode":853,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20005"},{"tmsNumber":20004,"dataUpdatedTime":"2023-05-09T08:08:00+00:00","name":"vt1_Espoo_Kasavuori","names":{"fi":"Ramppi 21106 Hki, penkka","sv":"Ramppi 21106 Hki, penkka","en":"Ramppi 21106 Hki, penkka"},"coordinates":{"longitude":24.680272,"latitude":60.210344},"roadNumber":1,"roadSection":5,"carriageway":"DUAL_CARRIAGEWAY_LEFT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Espoo","municipalityCode":49,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Turku","direction1MunicipalityCode":853,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20004"},{"tmsNumber":20002,"dataUpdatedTime":"2023-10-26T06:19:26+00:00","name":"vt1_Espoo_Hirvisuo","names":{"fi":"LML012920","sv":"LML012920","en":"LML012920"},"coordinates":{"longitude":24.637997,"latitude":60.220898},"roadNumber":1,"roadSection":6,"carriageway":"ONE_CARRIAGEWAY","side":"RIGHT","municipality":"Espoo","municipalityCode":49,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Turku","direction1MunicipalityCode":853,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20002"},{"tmsNumber":20018,"dataUpdatedTime":"2024-03-20T10:50:20+00:00","name":"vt1_Espoo_Ruukinranta","names":{"fi":"Ramppi 21102","sv":"Ramppi 21102","en":"Ramppi 21102"},"coordinates":{"longitude":24.826427,"latitude":60.208922},"roadNumber":1,"roadSection":3,"carriageway":"DUAL_CARRIAGEWAY_RIGHT_IN_INCREASING_DIRECTION","side":"RIGHT","municipality":"Espoo","municipalityCode":49,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Turku","direction1MunicipalityCode":853,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20018"},{"tmsNumber":20021,"dataUpdatedTime":"2024-01-30T11:28:57+00:00","name":"vt3_Kotamäki_HML","names":{"fi":"LML010308","sv":"LML010308","en":"LML010308"},"coordinates":{"longitude":24.809478,"latitude":60.350625},"roadNumber":3,"roadSection":103,"carriageway":"DUAL_CARRIAGEWAY_RIGHT_IN_INCREASING_DIRECTION","side":"RIGHT","municipality":"Nurmijärvi","municipalityCode":543,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Hämeenlinna","direction1MunicipalityCode":109,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20021"},{"tmsNumber":20028,"dataUpdatedTime":"2023-05-09T08:08:00+00:00","name":"st170_Kulosaari_LML","names":{"fi":"Tie 170 Kulosaari","sv":"Väg 170 Brändö","en":"Road 170 Kulosaari"},"coordinates":{"longitude":24.992731,"latitude":60.185775},"roadNumber":170,"roadSection":1,"carriageway":"DUAL_CARRIAGEWAY_RIGHT_IN_INCREASING_DIRECTION","side":"UNKNOWN","municipality":"Helsinki","municipalityCode":91,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Itäkeskus","direction1MunicipalityCode":2003,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":93,"freeFlowSpeed2":93,"id":"20028"},{"tmsNumber":20027,"dataUpdatedTime":"2024-03-20T10:50:05+00:00","name":"vt3_Peräjä_Hki","names":{"fi":"LML010309","sv":"LML010309","en":"LML010309"},"coordinates":{"longitude":24.808669,"latitude":60.353774},"roadNumber":3,"roadSection":103,"carriageway":"DUAL_CARRIAGEWAY_LEFT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Nurmijärvi","municipalityCode":543,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Hämeenlinna","direction1MunicipalityCode":109,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20027"},{"tmsNumber":20024,"dataUpdatedTime":"2023-05-09T08:08:00+00:00","name":"vt3_Mäyränkallio","names":{"fi":"LML010313","sv":"LML010313","en":"LML010313"},"coordinates":{"longitude":24.814737,"latitude":60.383362},"roadNumber":3,"roadSection":104,"carriageway":"DUAL_CARRIAGEWAY_LEFT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Nurmijärvi","municipalityCode":543,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Hämeenlinna","direction1MunicipalityCode":109,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20024"},{"tmsNumber":20017,"dataUpdatedTime":"2023-11-14T06:23:51+00:00","name":"vt1_Espoo_Espoonsilta","names":{"fi":"Ramppi 21102","sv":"Ramppi 21102","en":"Ramppi 21102"},"coordinates":{"longitude":24.803387,"latitude":60.208264},"roadNumber":1,"roadSection":4,"carriageway":"DUAL_CARRIAGEWAY_RIGHT_IN_INCREASING_DIRECTION","side":"RIGHT","municipality":"Espoo","municipalityCode":49,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Turku","direction1MunicipalityCode":853,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20017"},{"tmsNumber":20201,"dataUpdatedTime":"2024-03-15T05:28:49+00:00","name":"kt43_Uusikaupunki_Orivo_Flex","names":{"fi":"Tie 43 Uusikaupunki Orivo Flex","sv":"Väg 43 Nystad Orivo Flex","en":"Road 43 Uusikaupunki Orivo Flex"},"coordinates":{"longitude":21.497055,"latitude":60.807408},"roadNumber":43,"roadSection":1,"carriageway":"ONE_CARRIAGEWAY","side":"UNKNOWN","municipality":"Uusikaupunki","municipalityCode":895,"province":"Varsinais-Suomi","provinceCode":2,"direction1Municipality":"","direction1MunicipalityCode":189,"direction2Municipality":"","direction2MunicipalityCode":188,"id":"20201"},{"tmsNumber":20301,"dataUpdatedTime":"2023-05-15T16:09:35+00:00","name":"kt46_Kouvola_Uimila_Flex","names":{"fi":"kt46_Kouvola_Uimila_Flex","sv":"kt46_Kouvola_Uimila_Flex","en":"kt46_Kouvola_Uimila_Flex"},"coordinates":{"longitude":26.343977,"latitude":61.150644},"roadNumber":46,"roadSection":10,"carriageway":"ONE_CARRIAGEWAY","side":"UNKNOWN","municipality":"Kouvola","municipalityCode":286,"province":"Kymenlaakso","provinceCode":8,"direction1Municipality":"Heinola","direction1MunicipalityCode":111,"direction2Municipality":"Kouvola","direction2MunicipalityCode":286,"id":"20301"},{"tmsNumber":20025,"dataUpdatedTime":"2023-05-09T08:08:00+00:00","name":"vt3_Yli-Hemmi","names":{"fi":"LML010314","sv":"LML010314","en":"LML010314"},"coordinates":{"longitude":24.814253,"latitude":60.393297},"roadNumber":3,"roadSection":104,"carriageway":"DUAL_CARRIAGEWAY_LEFT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Nurmijärvi","municipalityCode":543,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Hämeenlinna","direction1MunicipalityCode":109,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20025"},{"tmsNumber":20026,"dataUpdatedTime":"2023-05-09T08:08:00+00:00","name":"vt3_Nurmijärvi_Hki","names":{"fi":"LML010315","sv":"LML010315","en":"LML010315"},"coordinates":{"longitude":24.844291,"latitude":60.451756},"roadNumber":3,"roadSection":104,"carriageway":"DUAL_CARRIAGEWAY_LEFT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Nurmijärvi","municipalityCode":543,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Hämeenlinna","direction1MunicipalityCode":109,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20026"},{"tmsNumber":20007,"dataUpdatedTime":"2023-05-09T08:08:00+00:00","name":"vt1_Espoo_Tuomarila","names":{"fi":"LML014216","sv":"LML014216","en":"LML014216"},"coordinates":{"longitude":24.695188,"latitude":60.205637},"roadNumber":1,"roadSection":5,"carriageway":"DUAL_CARRIAGEWAY_LEFT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Espoo","municipalityCode":49,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Turku","direction1MunicipalityCode":853,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20007"},{"tmsNumber":20010,"dataUpdatedTime":"2023-05-09T08:08:00+00:00","name":"vt1_Espoo_Turveradantie","names":{"fi":"Ramppi 21102","sv":"Ramppi 21102","en":"Ramppi 21102"},"coordinates":{"longitude":24.785277,"latitude":60.206768},"roadNumber":1,"roadSection":4,"carriageway":"DUAL_CARRIAGEWAY_LEFT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Espoo","municipalityCode":49,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Turku","direction1MunicipalityCode":853,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20010"},{"tmsNumber":20006,"dataUpdatedTime":"2023-05-09T08:08:00+00:00","name":"vt1_Espoo_Kuurinniitty","names":{"fi":"LML014215","sv":"LML014215","en":"LML014215"},"coordinates":{"longitude":24.710207,"latitude":60.200669},"roadNumber":1,"roadSection":5,"carriageway":"DUAL_CARRIAGEWAY_LEFT_IN_INCREASING_DIRECTION","side":"LEFT","municipality":"Espoo","municipalityCode":49,"province":"Uusimaa","provinceCode":1,"direction1Municipality":"Turku","direction1MunicipalityCode":853,"direction2Municipality":"Helsinki","direction2MunicipalityCode":91,"freeFlowSpeed1":105,"freeFlowSpeed2":105,"id":"20006"},{"tmsNumber":20009,"dataUpdatedTime":"2023-05-09T08:08:00+00:00","name":"vt1_Espoo_Stensgård","names":{"fi":"Ramppi 21102","sv":"Ramppi 21102","en":"Ramppi 21102"},"coordinates":{"longitude":24.749333,"latitude":60.205067},"roadNumber":1,"roadSection":5,"carriageway":"DUAL_CARRIAGEWAY_RIGHT_IN_INCREASING_DIRECTION","side":"RIGHT","municipality":"Esp... (set the log level to DEBUG or TRACE to see the full content) 
  </msg>
-<msg time="2024-04-18T10:47:31.964890" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-04-19T11:21:08.975440" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>user_session</arg>
-<arg>/api/Stations/24607/history</arg>
-<arg>params=timeRange=Today</arg>
+<arg>/api/Stations</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-04-18T10:47:31.809234" elapsed="0.155656"/>
+<status status="PASS" start="2024-04-19T11:21:08.855856" elapsed="0.119584"/>
 </kw>
 <kw name="Status Should Be" owner="RequestsLibrary">
 <arg>200</arg>
 <arg>${response}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2024-04-18T10:47:31.965934" elapsed="0.001018"/>
+<status status="PASS" start="2024-04-19T11:21:08.976440" elapsed="0.001001"/>
+</kw>
+<doc>GET /stations test on API. Response status will be checked.</doc>
+<tag>Smoke</tag>
+<status status="PASS" start="2024-04-19T11:21:08.851860" elapsed="0.125581"/>
+</test>
+<test id="s1-s1-s1-s1-t3" name="AT003 - Real-Time /stations/{id}/history test on API" line="30">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-04-19T11:21:08.980532" level="INFO">Creating Session using : alias=user_session, url=http://128.214.255.43:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>user_session</arg>
+<arg>${API_URL}</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-04-19T11:21:08.979442" elapsed="0.001195"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-04-19T11:21:09.270609" level="INFO">GET Request : url=http://128.214.255.43:8080/api/Stations/24607/history?timeRange=Today 
+ path_url=/api/Stations/24607/history?timeRange=Today 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-04-19T11:21:09.271175" level="INFO">GET Response : url=http://128.214.255.43:8080/api/Stations/24607/history?timeRange=Today 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json; charset=utf-8', 'Date': 'Fri, 19 Apr 2024 08:21:09 GMT', 'Server': 'Kestrel', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'Vary': 'Accept-Encoding'} 
+ body={"stationId":"24607","tmsNumber":1607,"dataUpdatedTime":"2024-03-13T12:50:05Z","name":"vt1_Karnainen","coordinates":{"longitude":24.079464,"latitude":60.289063},"sensors":[{"sensorId":"5054","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-18T23:00:00Z","timeWindowEnd":"2024-04-19T00:00:00Z","measuredTime":"2024-04-19T00:45:44Z","unit":"kpl/h","value":40,"id":"6621bf2d78147274c088af5b"},{"sensorId":"5055","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-18T23:00:00Z","timeWindowEnd":"2024-04-19T00:00:00Z","measuredTime":"2024-04-19T00:45:44Z","unit":"kpl/h","value":30,"id":"6621bf2d78147274c088af5c"},{"sensorId":"5056","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-18T23:00:00Z","timeWindowEnd":"2024-04-19T00:00:00Z","measuredTime":"2024-04-19T00:45:44Z","unit":"km/h","value":100,"id":"6621bf2d78147274c088af5d"},{"sensorId":"5057","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-18T23:00:00Z","timeWindowEnd":"2024-04-19T00:00:00Z","measuredTime":"2024-04-19T00:45:44Z","unit":"km/h","value":97,"id":"6621bf2d78147274c088af5e"},{"sensorId":"5067","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1_MS1","timeWindowStart":"2024-04-18T23:00:00Z","timeWindowEnd":"2024-04-19T00:00:00Z","measuredTime":"2024-04-19T00:45:44Z","unit":"***","value":1,"id":"6621bf2d78147274c088af5f"},{"sensorId":"5071","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2_MS2","timeWindowStart":"2024-04-18T23:00:00Z","timeWindowEnd":"2024-04-19T00:00:00Z","measuredTime":"2024-04-19T00:45:44Z","unit":"***","value":1,"id":"6621bf2d78147274c088af60"},{"sensorId":"5054","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-19T00:00:00Z","timeWindowEnd":"2024-04-19T01:00:00Z","measuredTime":"2024-04-19T01:43:07Z","unit":"kpl/h","value":26,"id":"6621cd3d78147274c088bad0"},{"sensorId":"5055","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-19T00:00:00Z","timeWindowEnd":"2024-04-19T01:00:00Z","measuredTime":"2024-04-19T01:43:07Z","unit":"kpl/h","value":32,"id":"6621cd3d78147274c088bad1"},{"sensorId":"5056","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-19T00:00:00Z","timeWindowEnd":"2024-04-19T01:00:00Z","measuredTime":"2024-04-19T01:43:07Z","unit":"km/h","value":96,"id":"6621cd3d78147274c088bad2"},{"sensorId":"5057","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-19T00:00:00Z","timeWindowEnd":"2024-04-19T01:00:00Z","measuredTime":"2024-04-19T01:43:07Z","unit":"km/h","value":108,"id":"6621cd3d78147274c088bad3"},{"sensorId":"5067","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1_MS1","timeWindowStart":"2024-04-19T00:00:00Z","timeWindowEnd":"2024-04-19T01:00:00Z","measuredTime":"2024-04-19T01:43:07Z","unit":"***","value":1,"id":"6621cd3d78147274c088bad4"},{"sensorId":"5071","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2_MS2","timeWindowStart":"2024-04-19T00:00:00Z","timeWindowEnd":"2024-04-19T01:00:00Z","measuredTime":"2024-04-19T01:43:07Z","unit":"***","value":1,"id":"6621cd3d78147274c088bad5"},{"sensorId":"5054","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-19T01:00:00Z","timeWindowEnd":"2024-04-19T02:00:00Z","measuredTime":"2024-04-19T02:42:58Z","unit":"kpl/h","value":33,"id":"6621db4d78147274c088c645"},{"sensorId":"5055","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-19T01:00:00Z","timeWindowEnd":"2024-04-19T02:00:00Z","measuredTime":"2024-04-19T02:42:58Z","unit":"kpl/h","value":70,"id":"6621db4d78147274c088c646"},{"sensorId":"5056","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-19T01:00:00Z","timeWindowEnd":"2024-04-19T02:00:00Z","measuredTime":"2024-04-19T02:42:58Z","unit":"km/h","value":97,"id":"6621db4d78147274c088c647"},{"sensorId":"5057","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-19T01:00:00Z","timeWindowEnd":"2024-04-19T02:00:00Z","measuredTime":"2024-04-19T02:42:58Z","unit":"km/h","value":103,"id":"6621db4d78147274c088c648"},{"sensorId":"5067","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1_MS1","timeWindowStart":"2024-04-19T01:00:00Z","timeWindowEnd":"2024-04-19T02:00:00Z","measuredTime":"2024-04-19T02:42:58Z","unit":"***","value":1,"id":"6621db4d78147274c088c649"},{"sensorId":"5071","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2_MS2","timeWindowStart":"2024-04-19T01:00:00Z","timeWindowEnd":"2024-04-19T02:00:00Z","measuredTime":"2024-04-19T02:42:58Z","unit":"***","value":3,"id":"6621db4d78147274c088c64a"},{"sensorId":"5054","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-19T02:00:00Z","timeWindowEnd":"2024-04-19T03:00:00Z","measuredTime":"2024-04-19T03:42:57Z","unit":"kpl/h","value":85,"id":"6621e95d78147274c088d1ba"},{"sensorId":"5055","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-19T02:00:00Z","timeWindowEnd":"2024-04-19T03:00:00Z","measuredTime":"2024-04-19T03:42:57Z","unit":"kpl/h","value":216,"id":"6621e95d78147274c088d1bb"},{"sensorId":"5056","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-19T02:00:00Z","timeWindowEnd":"2024-04-19T03:00:00Z","measuredTime":"2024-04-19T03:42:57Z","unit":"km/h","value":105,"id":"6621e95d78147274c088d1bc"},{"sensorId":"5057","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-19T02:00:00Z","timeWindowEnd":"2024-04-19T03:00:00Z","measuredTime":"2024-04-19T03:42:57Z","unit":"km/h","value":109,"id":"6621e95d78147274c088d1bd"},{"sensorId":"5067","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1_MS1","timeWindowStart":"2024-04-19T02:00:00Z","timeWindowEnd":"2024-04-19T03:00:00Z","measuredTime":"2024-04-19T03:42:57Z","unit":"***","value":3,"id":"6621e95d78147274c088d1be"},{"sensorId":"5071","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2_MS2","timeWindowStart":"2024-04-19T02:00:00Z","timeWindowEnd":"2024-04-19T03:00:00Z","measuredTime":"2024-04-19T03:42:57Z","unit":"***","value":8,"id":"6621e95d78147274c088d1bf"},{"sensorId":"5054","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-19T03:00:00Z","timeWindowEnd":"2024-04-19T04:00:00Z","measuredTime":"2024-04-19T04:43:04Z","unit":"kpl/h","value":173,"id":"6621f76e78147274c088dd2f"},{"sensorId":"5055","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-19T03:00:00Z","timeWindowEnd":"2024-04-19T04:00:00Z","measuredTime":"2024-04-19T04:43:04Z","unit":"kpl/h","value":443,"id":"6621f76e78147274c088dd30"},{"sensorId":"5056","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-19T03:00:00Z","timeWindowEnd":"2024-04-19T04:00:00Z","measuredTime":"2024-04-19T04:43:04Z","unit":"km/h","value":106,"id":"6621f76e78147274c088dd31"},{"sensorId":"5057","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-19T03:00:00Z","timeWindowEnd":"2024-04-19T04:00:00Z","measuredTime":"2024-04-19T04:43:04Z","unit":"km/h","value":109,"id":"6621f76e78147274c088dd32"},{"sensorId":"5067","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1_MS1","timeWindowStart":"2024-04-19T03:00:00Z","timeWindowEnd":"2024-04-19T04:00:00Z","measuredTime":"2024-04-19T04:43:04Z","unit":"***","value":6,"id":"6621f76e78147274c088dd33"},{"sensorId":"5071","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2_MS2","timeWindowStart":"2024-04-19T03:00:00Z","timeWindowEnd":"2024-04-19T04:00:00Z","measuredTime":"2024-04-19T04:43:04Z","unit":"***","value":16,"id":"6621f76e78147274c088dd34"},{"sensorId":"5054","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-19T04:00:00Z","timeWindowEnd":"2024-04-19T05:00:00Z","measuredTime":"2024-04-19T05:43:07Z","unit":"kpl/h","value":348,"id":"6622057d78147274c088e8a4"},{"sensorId":"5055","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-19T04:00:00Z","timeWindowEnd":"2024-04-19T05:00:00Z","measuredTime":"2024-04-19T05:43:07Z","unit":"kpl/h","value":493,"id":"6622057d78147274c088e8a5"},{"sensorId":"5056","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-19T04:00:00Z","timeWindowEnd":"2024-04-19T05:00:00Z","measuredTime":"2024-04-19T05:43:07Z","unit":"km/h","value":109,"id":"6622057d78147274c088e8a6"},{"sensorId":"5057","stationId":"24607","name":"KESKINOPEUS_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-19T04:00:00Z","timeWindowEnd":"2024-04-19T05:00:00Z","measuredTime":"2024-04-19T05:43:07Z","unit":"km/h","value":108,"id":"6622057d78147274c088e8a7"},{"sensorId":"5067","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1_MS1","timeWindowStart":"2024-04-19T04:00:00Z","timeWindowEnd":"2024-04-19T05:00:00Z","measuredTime":"2024-04-19T05:43:07Z","unit":"***","value":12,"id":"6622057d78147274c088e8a8"},{"sensorId":"5071","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2_MS2","timeWindowStart":"2024-04-19T04:00:00Z","timeWindowEnd":"2024-04-19T05:00:00Z","measuredTime":"2024-04-19T05:43:07Z","unit":"***","value":18,"id":"6622057d78147274c088e8a9"},{"sensorId":"5054","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA1","timeWindowStart":"2024-04-19T05:00:00Z","timeWindowEnd":"2024-04-19T06:00:00Z","measuredTime":"2024-04-19T06:43:10Z","unit":"kpl/h","value":402,"id":"6622138d78147274c088f419"},{"sensorId":"5055","stationId":"24607","name":"OHITUKSET_60MIN_KIINTEA_SUUNTA2","timeWindowStart":"2024-04-19T05:00:00Z","timeWindowEnd":"2024-04-19T06:00:00Z","measuredTime":"2024-04-19T06:43:10Z","unit":"kpl/h","value":539,"id":"6622138d78147274c088f41a"},{"sensorId":"5056",... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2024-04-19T11:21:09.273196" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>user_session</arg>
+<arg>/api/Stations/24607/history</arg>
+<arg>params=timeRange=Today</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-04-19T11:21:08.980637" elapsed="0.292559"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2024-04-19T11:21:09.275199" elapsed="0.001085"/>
 </kw>
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2024-04-18T10:47:31.967945" level="INFO">${Current_Date} = 2024-04-18</msg>
+<msg time="2024-04-19T11:21:09.278199" level="INFO">${Current_Date} = 2024-04-19</msg>
 <var>${Current_Date}</var>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2024-04-18T10:47:31.967945" elapsed="0.001076"/>
+<status status="PASS" start="2024-04-19T11:21:09.277196" elapsed="0.001003"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-04-18T10:47:31.970006" level="INFO">${Formatted_Date} = 2024-04-18T00:00:00Z</msg>
+<msg time="2024-04-19T11:21:09.279199" level="INFO">${Formatted_Date} = 2024-04-19T00:00:00Z</msg>
 <var>${Formatted_Date}</var>
 <arg>${Current_Date}T00:00:00Z</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-04-18T10:47:31.969021" elapsed="0.000985"/>
+<status status="PASS" start="2024-04-19T11:21:09.279199" elapsed="0.000992"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2024-04-18T10:47:31.985562" level="INFO">${endTime} = ['2024-04-18T00:00:00Z']</msg>
+<msg time="2024-04-19T11:21:09.326275" level="INFO">${endTime} = ['2024-04-19T00:00:00Z']</msg>
 <var>${endTime}</var>
 <arg>${response.json()}</arg>
 <arg>sensors[0].timeWindowEnd</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2024-04-18T10:47:31.970946" elapsed="0.015621"/>
+<status status="PASS" start="2024-04-19T11:21:09.281196" elapsed="0.045079"/>
 </kw>
 <kw name="Get From List" owner="Collections">
-<msg time="2024-04-18T10:47:31.987474" level="INFO">${endTimeFromList} = 2024-04-18T00:00:00Z</msg>
+<msg time="2024-04-19T11:21:09.327190" level="INFO">${endTimeFromList} = 2024-04-19T00:00:00Z</msg>
 <var>${endTimeFromList}</var>
 <arg>${endTime}</arg>
 <arg>0</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2024-04-18T10:47:31.987474" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-19T11:21:09.327190" elapsed="0.000000"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${endTimeFromList}</arg>
 <arg>${Formatted_Date}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-04-18T10:47:31.988479" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-19T11:21:09.328194" elapsed="0.000997"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-04-18T10:47:31.989481" level="INFO">History data is shown Real-Time!</msg>
+<msg time="2024-04-19T11:21:09.330205" level="INFO">History data is shown Real-Time!</msg>
 <arg>History data is shown Real-Time!</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-04-18T10:47:31.989481" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-19T11:21:09.330205" elapsed="0.000000"/>
 </kw>
 <doc>GET /stations/{id}/history test on API. Response status will be checked. Date of the retrieved data will be checked.</doc>
 <tag>Smoke</tag>
-<status status="PASS" start="2024-04-18T10:47:31.805220" elapsed="0.186255"/>
+<status status="PASS" start="2024-04-19T11:21:08.978458" elapsed="0.352937"/>
 </test>
-<status status="PASS" start="2024-04-18T10:47:31.438599" elapsed="0.554871"/>
+<test id="s1-s1-s1-s1-t4" name="AT004 - Map tiles are visible" line="46">
+<kw name="Open Home" owner="main">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-19T11:21:09.334396" level="INFO">Opening browser 'Firefox' to base url 'http://128.214.255.43:5175'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-19T11:21:09.334396" elapsed="5.926274"/>
+</kw>
+<status status="PASS" start="2024-04-19T11:21:09.334396" elapsed="5.926274"/>
+</kw>
+<kw name="Max Window" owner="main">
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-19T11:21:15.261677" elapsed="0.261851"/>
+</kw>
+<status status="PASS" start="2024-04-19T11:21:15.261677" elapsed="0.262849"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//img[@src="https://a.tile.openstreetmap.org/12/2331/1185.png"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-19T11:21:15.524526" elapsed="0.235206"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-19T11:21:15.760700" elapsed="2.696365"/>
+</kw>
+<doc>Testing whether the map is visible in front-end</doc>
+<status status="PASS" start="2024-04-19T11:21:09.332399" elapsed="9.124666"/>
+</test>
+<status status="PASS" start="2024-04-19T11:20:56.870956" elapsed="21.589108"/>
 </suite>
-<status status="PASS" start="2024-04-18T10:47:31.433255" elapsed="0.563268"/>
+<status status="PASS" start="2024-04-19T11:20:56.845400" elapsed="21.616939"/>
 </suite>
-<status status="PASS" start="2024-04-18T10:47:31.430257" elapsed="0.568262"/>
+<status status="PASS" start="2024-04-19T11:20:56.841401" elapsed="21.622937"/>
 </suite>
-<status status="PASS" start="2024-04-18T10:47:31.405256" elapsed="0.595265"/>
+<status status="PASS" start="2024-04-19T11:20:56.807398" elapsed="21.658937"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Smoke</stat>
+<stat pass="2" fail="0" skip="0">Smoke</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Testing-Tukko">Testing-Tukko</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">Testing-Tukko.Tests</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Acceptance-Test">Testing-Tukko.Tests.Acceptance-Test</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="Acc">Testing-Tukko.Tests.Acceptance-Test.Acc</stat>
+<stat pass="4" fail="0" skip="0" id="s1" name="Testing-Tukko">Testing-Tukko</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="Tests">Testing-Tukko.Tests</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1-s1" name="Acceptance-Test">Testing-Tukko.Tests.Acceptance-Test</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1-s1-s1" name="Acc">Testing-Tukko.Tests.Acceptance-Test.Acc</stat>
 </suite>
 </statistics>
 <errors>
